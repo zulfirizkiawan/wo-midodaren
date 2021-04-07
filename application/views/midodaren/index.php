@@ -22,6 +22,9 @@
                         <li><a href="<?php echo base_url(); ?>midodaren/galeri">Galeri</a></li>
                         <li><a href="<?php echo base_url(); ?>midodaren/tentang">Tentang Kami</a></li>
                         <li><a href="<?php echo base_url(); ?>midodaren/hubungi">Hubungi Kami</a></li>
+
+                        <button type="button" class="btn btn-primary"> <a href="<?php echo base_url(); ?>auth/registration">LOGIN</a></button>
+                        <button type="button" class="btn btn-info"> <a href="<?php echo base_url(); ?>auth/registration">REGISTER</a></button>
                     </ul>
                 </div>
             </div>
@@ -134,12 +137,12 @@
                             </div>
                             <div class="col-md-6 col-sm-6 text-center">
                                 <form method="" class="text-button" action="<?php echo base_url(); ?>midodaren/paketrumah">
-                                    <button id="submit-buttons" class="button1" type="submit" ​​​​​>Paket wedding rumah lainnya</button>
+                                    <button id="submit-buttons" class="button1" type="submit" ​​​​​>Paket WO rumah lainnya</button>
                                 </form>
                             </div>
                             <div class="col-md-6 col-sm-6 text-center">
                                 <form method="" class="text-button" action="<?php echo base_url(); ?>midodaren/pakethotel">
-                                    <button id="submit-buttons" class="button1" type="submit" ​​​​​>Paket wedding hotel lainnya</button>
+                                    <button id="submit-buttons" class="button1" type="submit" ​​​​​>Paket WO hotel lainnya</button>
                                 </form>
                             </div>
 

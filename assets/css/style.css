@@ -19,6 +19,7 @@ body {
   background: #fff;
 }
 
+
 #page {
   position: relative;
   overflow-x: hidden;
@@ -136,8 +137,10 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-nav ul li a:hover, .fh5co-nav ul li a:focus, .fh5co-nav ul li a:active {
   color: white;
 }
+
 .fh5co-nav ul li.has-dropdown {
   position: relative;
+  color: rgb(243, 243, 243);
 }
 
 

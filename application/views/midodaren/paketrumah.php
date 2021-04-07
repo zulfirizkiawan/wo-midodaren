@@ -22,6 +22,9 @@
                         <li><a href="<?php echo base_url(); ?>midodaren/galeri">Galeri</a></li>
                         <li><a href="<?php echo base_url(); ?>midodaren/tentang">Tentang Kami</a></li>
                         <li><a href="<?php echo base_url(); ?>midodaren/hubungi">Hubungi Kami</a></li>
+
+                        <button type="button" class="btn btn-primary"> <a href="<?php echo base_url(); ?>auth/registration">LOGIN</a></button>
+                        <button type="button" class="btn btn-info"> <a href="<?php echo base_url(); ?>auth/registration">REGISTER</a></button>
                     </ul>
                 </div>
             </div>

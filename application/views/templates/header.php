@@ -50,6 +50,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/icomoon.css">
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!-- Magnific Popup -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/magnific-popup.css">

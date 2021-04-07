@@ -200,7 +200,7 @@ a {
 // See https://github.com/twbs/bootstrap/issues/19402
 
 a:not([href]):not([class]) {
-  color: inherit;
+  color: #fff;
   text-decoration: none;
 
   @include hover() {
