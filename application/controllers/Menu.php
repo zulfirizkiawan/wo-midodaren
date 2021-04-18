@@ -53,6 +53,17 @@ class Menu extends CI_Controller
          $this->load->view('menu/submenu', $data);
          $this->load->view('templates/footer_ad');
 
+      }else{
+         $data = [
+            'title' => $this->input->post('title'),
+            'menu_id' => $this->input->post('menu_id'),
+            'url  ' => $this->input->post('url'),
+            'icon' => $this->input->post('icon'),
+            'is_active' => $this->input->post('is_active')
+         ];
+         $this->db->insert('user_sub_menu', $data);
+         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> New Submenu Added! </div>');
+         redirect('menu/submenu');
       }
    }
 }

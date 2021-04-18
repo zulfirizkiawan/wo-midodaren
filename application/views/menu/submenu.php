@@ -8,7 +8,12 @@
 
     <div class="row">
         <div class="col-lg">
-            <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
+            <?php if (validation_errors()) : ?>
+                <div class="alert alert-danger" role="alert">
+                    <?= validation_errors();  ?>
+                </div>
+            <?php endif; ?>
+
 
             <?= $this->session->flashdata('message') ?>
 
@@ -69,11 +74,12 @@
                 </button>
             </div>
             <form action="<?= base_url('menu/submenu');  ?>" method="post">
+
                 <div class="modal-body">
                     <div class="form-group">
                         <input type="text" class="form-control" id="title" name="title" placeholder="Submenu title">
                     </div>
-                    
+
                     <div class="form-group">
                         <select name="menu_id" id="menu_id" class="form-control">
                             <option value="">Select Menu</option>
@@ -82,6 +88,7 @@
                             <?php endforeach; ?>
                         </select>
                     </div>
+
                     <div class="modal-body">
                         <div class="form-group">
                             <input type="text" class="form-control" id="url" name="url" placeholder="Submenu url">
@@ -97,7 +104,7 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="1" name="is_active" id="is_active" checked>
                             <label class="form-check-label" for="is_active">
-                                    Active?
+                                Active?
                             </label>
                         </div>
                     </div>
