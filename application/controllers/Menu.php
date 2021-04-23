@@ -71,4 +71,22 @@ class Menu extends CI_Controller
          redirect('menu/submenu');
       }
    }
+
+   // public function deletemenu($menu_id)
+   //  {
+   //      $menu = $this->db->get_where('user_menu', ['id' => $menu_id])->row_array();
+
+   //      $this->db->delete('user_menu', ['id' => $menu_id]);
+   //      $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $menu['menu'] . ' menu is deleted!</div>');
+   //      redirect('menu');
+   //  }
+
+    public function deletesub($submenu_id)
+    {
+        $submenu = $this->db->get_where('user_sub_menu', ['id' => $submenu_id])->row_array();
+
+        $this->db->delete('user_sub_menu', ['id' => $submenu_id]);
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $submenu['menu'] . ' Submenu is deleted!</div>');
+        redirect('menu/submenu');
+    }
 }
