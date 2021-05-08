@@ -57,7 +57,7 @@ class User extends CI_Controller
       $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
       $this->form_validation->set_rules('name', 'Name', 'trim|required');
-      $this->form_validation->set_rules('username', 'Username', 'trim|required');
+      // $this->form_validation->set_rules('username', 'Username', 'trim|required');
 
       if ($this->form_validation->run() == false) {
          $this->load->view('templates/header_ad', $data);
@@ -67,7 +67,7 @@ class User extends CI_Controller
          $this->load->view('templates/footer_ad');
       } else {
          $name = $this->input->post('name');
-         $username = $this->input->post('username');
+         // $username = $this->input->post('username');
          $email = $this->input->post('email');
 
          // cek jika gambar diubah
@@ -93,7 +93,7 @@ class User extends CI_Controller
 
          $this->db->set([
             'name' => $name,
-            'username' => $username
+            // 'username' => $username
          ]);
          $this->db->where('email', $email);
          $this->db->update('user');
