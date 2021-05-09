@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Bulan Mei 2021 pada 14.02
+-- Waktu pembuatan: 09 Bulan Mei 2021 pada 12.10
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.3
 
@@ -202,9 +202,15 @@ CREATE TABLE `tbl_produk` (
 --
 
 INSERT INTO `tbl_produk` (`id_produk`, `nama_produk`, `deskripsi`, `harga`, `gambar`, `kategori`) VALUES
-(1, 'Paket 1', 'staf 8dekorasi repremium', '3500000', 'paket-01.jpg', 1),
-(2, 'Paket 2', 'Lorem ipsum dolor sit amet, consectetur adipisicin', '6250000', 'paket-02.jpg', 1),
-(3, 'Paket 3', 'Lorem ipsum dolor sit amet, consectetur adipisicin', '7250000', 'paket-03.jpg', 1);
+(1, 'Laptop 1', 'Lorem ipsum dolor sit amet, consectetur adipisicin', '3500000', 'laptop1.jpg', 1),
+(2, 'Laptop 2', 'Lorem ipsum dolor sit amet, consectetur adipisicin', '6250000', 'laptop2.jpg', 1),
+(3, 'Laptop 3', 'Lorem ipsum dolor sit amet, consectetur adipisicin', '7250000', 'laptop3.jpg', 1),
+(4, 'Smartphone 1', 'Lorem ipsum dolor sit amet, consectetur adipisicin', '3560000', 'hp1.jpg', 2),
+(5, 'Smartphone 2', 'Lorem ipsum dolor sit amet, consectetur adipisicin', '4300000', 'hp2.jpg', 2),
+(6, 'Smartphone 3', 'Lorem ipsum dolor sit amet, consectetur adipisicin', '5100000', 'hp3.jpg', 2),
+(7, 'Robot 1', 'Lorem ipsum dolor sit amet, consectetur adipisicin', '3500000', 'robot1.jpg', 3),
+(8, 'Robot 2', 'Lorem ipsum dolor sit amet, consectetur adipisicin', '4500000', 'robot2.jpg', 3),
+(9, 'Robot 3', 'Lorem ipsum dolor sit amet, consectetur adipisicin', '6100000', 'robot3.jpg', 3);
 
 -- --------------------------------------------------------
 
@@ -253,8 +259,7 @@ INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 (2, 1, 2),
 (3, 2, 2),
 (6, 1, 3),
-(7, 1, 4),
-(8, 2, 4);
+(7, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -507,7 +512,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_menu`
