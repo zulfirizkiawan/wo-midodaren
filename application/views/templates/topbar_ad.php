@@ -27,8 +27,16 @@
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
 
+            <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li><a href="<?php echo base_url() ?>pemesanan/tampil_cart"><i class="glyphicon glyphicon-shopping-cart"></i> bayar </a></li>
+                    </ul>
+                </div>
+
                 <div class="topbar-divider d-none d-sm-block"></div>
 
+                
                 <!-- Nav Item - User Information -->
                 <li class="nav-item dropdown no-arrow">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

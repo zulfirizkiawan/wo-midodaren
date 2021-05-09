@@ -24,6 +24,20 @@ class Admin extends CI_Controller
         $this->load->view('templates/footer_ad',);
     }
 
+    // public function transaksi()
+    // {
+    //     $data['title'] = 'ManajemenK';
+    //     $data['user'] = $this->db->get_where('user', ['email' =>
+    //     $this->session->userdata('email')])->row_array();
+        
+
+    //     $this->load->view('templates/header_ad', $data);
+    //     $this->load->view('templates/sidebar_ad', $data);
+    //     $this->load->view('templates/topbar_ad', $data);
+    //     $this->load->view('admin/transaksi', $data);
+    //     $this->load->view('templates/footer_ad',);
+    // }
+
     public function role()
     {
         $data['title'] = 'Role';
@@ -120,4 +134,7 @@ class Admin extends CI_Controller
         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $role['role'] . ' role is deleted!</div>');
         redirect('admin/role');
     }
+
+
+    
 }

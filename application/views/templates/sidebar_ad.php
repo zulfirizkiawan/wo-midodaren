@@ -13,6 +13,32 @@
     <!-- Divider -->
     <hr class="sidebar-divider ">
 
+    <div class="list-group">
+          <a href="<?php echo base_url() ?>pemesanan/tampil_cart" class="list-group-item"><strong><i class="glyphicon glyphicon-shopping-cart"></i> Pemesanan </strong></a>
+          <?php
+
+          $cart = $this->cart->contents();
+
+          // If cart is empty, this will show below message.
+          if (empty($cart)) {
+          ?>
+            <a class="list-group-item">Anda masih Belum memilih paket</a>
+            <?php
+          } else {
+            $grand_total = 0;
+            foreach ($cart as $item) {
+              $grand_total += $item['subtotal'];
+            ?>
+              <a class="list-group-item"><?php echo $item['name']; ?> (<?php echo $item['qty']; ?> x <?php echo number_format($item['price'], 0, ",", "."); ?>)=<?php echo number_format($item['subtotal'], 0, ",", "."); ?></a>
+            <?php
+            }
+            ?>
+
+          <?php
+          }
+          ?>
+        </div>
+
     <!-- Query Menu -->
     <?php
     $role_id = $this->session->userdata('role_id');
