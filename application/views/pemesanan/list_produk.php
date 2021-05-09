@@ -1,8 +1,15 @@
+<div class="mx-auto" style="width: 300px;">
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
 <h2>Daftar Produk</h2>
+  </div>
+</div>
+
+
+<div class="row">
 <?php
 	foreach ($produk as $row) {
 ?>
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4">
               <div class="kotak">
               <form method="post" action="<?php echo base_url();?>pemesanan/tambah" method="post" accept-charset="utf-8">
                 <a href="#"><img class="img-thumbnail" src="<?php echo base_url() . 'assets/images/'.$row['gambar']; ?>"/></a>
