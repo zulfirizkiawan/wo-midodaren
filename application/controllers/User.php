@@ -20,7 +20,7 @@ class User extends CI_Controller
       $this->load->view('templates/sidebar_ad', $data);
       $this->load->view('templates/topbar_ad', $data);
       $this->load->view('user/index', $data);
-      $this->load->view('templates/footer_ad',);
+      $this->load->view('templates/footer_ad');
    }
 
    public function paket()
