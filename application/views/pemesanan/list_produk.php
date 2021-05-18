@@ -1,4 +1,4 @@
-<div class="mx-auto" style="width: 300px;">
+<!-- <div class="mx-auto" style="width: 300px;"> -->
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
 <h2>Daftar Produk</h2>
   </div>
