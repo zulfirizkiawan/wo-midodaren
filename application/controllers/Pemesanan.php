@@ -31,7 +31,7 @@ class Pemesanan extends CI_Controller {
 		   $this->load->view('templates/sidebar_ad', $data);
 		   $this->load->view('templates/topbar_ad', $data);
 		   $this->load->view('pemesanan/list_produk',$data);
-		   $this->load->view('templates/footer_ad',);
+		   $this->load->view('templates/footer_ad');
 		} else {
 		   $this->db->insert('user_menu', ['menu' => $this->input->post('menu')]);
 		   $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> New Menu Added! </div>');
@@ -69,17 +69,21 @@ class Pemesanan extends CI_Controller {
 		$this->load->view('templates/footer_ad');
 	}
 	
-	// public function detail_produk()
-	// {
-	// 	$id=($this->uri->segment(3))?$this->uri->segment(3):0;
-	// 	$data['kategori'] = $this->keranjang_model->get_kategori_all();
-	// 	$data['detail'] = $this->keranjang_model->get_produk_id($id)->row_array();
-	// 	$this->load->view('templates/header_ad', $data);
-    //     $this->load->view('templates/sidebar_ad', $data);
-    //     $this->load->view('templates/topbar_ad', $data);
-	// 	$this->load->view('pemesanan/detail_produk',$data);
-	// 	$this->load->view('templates/footer_ad');
-	// }
+	public function detail_produk()
+	{
+		$data['title'] = 'Pemesanan paket';
+		$data['user'] = $this->db->get_where('user', ['email' =>
+		$this->session->userdata('email')])->row_array();
+
+		$id=($this->uri->segment(3))?$this->uri->segment(3):0;
+		$data['kategori'] = $this->keranjang_model->get_kategori_all();
+		$data['detail'] = $this->keranjang_model->get_produk_id($id)->row_array();
+		$this->load->view('templates/header_ad', $data);
+        $this->load->view('templates/sidebar_ad', $data);
+        $this->load->view('templates/topbar_ad', $data);
+		$this->load->view('pemesanan/detail_produk',$data);
+		$this->load->view('templates/footer_ad');
+	}
 	
 	
 	function tambah()
