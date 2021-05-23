@@ -7,6 +7,7 @@ class Admin extends CI_Controller
     {
         parent::__construct();
         is_logged_in();
+        $this->load->model('Admin_model');
     }
 
 
@@ -19,7 +20,7 @@ class Admin extends CI_Controller
         $data['pesanans'] = $this->Admin_model->pesanan()->result_array();
         // $data['pesanan'] = $this->db->get('tbl_detail_order')->result_array();
         //  $this->form_validation->set_rules('index', 'Admin', 'required');
-        
+
         $this->load->view('templates/header_ad', $data);
         $this->load->view('templates/sidebar_ad', $data);
         $this->load->view('templates/topbar_ad', $data);
@@ -74,7 +75,7 @@ class Admin extends CI_Controller
 
 
         $data['role'] = $this->db->get('user_role')->result_array();
-       
+
         $this->load->view('templates/header_ad', $data);
         $this->load->view('templates/sidebar_ad', $data);
         $this->load->view('templates/topbar_ad', $data);
