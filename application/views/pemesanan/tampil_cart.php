@@ -30,7 +30,7 @@
         <input type="hidden" name="cart[<?php echo $item['id']; ?>][qty]" value="<?php echo $item['qty']; ?>" />
         <tr>
           <td><?php echo $i++; ?></td>
-          <td><img class="img-responsive" src="<?php echo base_url() . 'assets/images/' . $item['gambar']; ?>" /></td>
+          <td><img width="500px" height="500px" img-responsive" src="<?php echo base_url() . 'assets/images/' . $item['gambar']; ?>" /></td>
           <td><?php echo $item['name']; ?></td>
           <td><?php echo number_format($item['price'], 0, ",", "."); ?></td>
           <td><input type="text" class="form-control input-sm" name="cart[<?php echo $item['id']; ?>][qty]" value="<?php echo $item['qty']; ?>" /></td>

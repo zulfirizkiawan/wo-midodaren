@@ -30,7 +30,7 @@ class User extends CI_Controller
       $this->session->userdata('email')])->row_array();
       // echo 'selamat datang ' . $data['user']['name'];
 
-      $data['userp'] = $this->db->get('paket')->result_array();
+      $data['userp'] = $this->db->get('tbl_produk')->result_array();
 
       $this->form_validation->set_rules('paket', 'User', 'required');
 
@@ -41,7 +41,7 @@ class User extends CI_Controller
          $this->load->view('user/paket', $data);
          $this->load->view('templates/footer_ad',);
       } else {
-         $this->db->insert('paket', ['userp' => $this->input->post('paket')]);
+         $this->db->insert('tbl_paket', ['userp' => $this->input->post('paket')]);
          $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> New Menu Added! </div>');
          redirect('user/paket');
       }

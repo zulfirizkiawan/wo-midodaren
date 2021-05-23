@@ -18,15 +18,20 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">jenis_paket</th>
-                        <th scope="col">nama_paket</th>
-                        <th scope="col">harga</th>
+                        <th scope="col">nama paket</th>
+                        <th scope="col">deskripsi</th>
+                        
                         <th scope="col">rias_busana</th>
                         <th scope="col">dekorasi_pelaminan</th>
                         <th scope="col">dokumentasi</th>
                         <th scope="col">dekorasi_tenda</th>
                         <th scope="col">support_acara</th>
-                        <th scope="col">minimal_dp</th>
+
+                        <th scope="col">gambar</th>
+                        <th scope="col">kategori</th>
+
+                        
+
                         
                         <th scope="col">Action</th>
                     </tr>
@@ -37,15 +42,20 @@
                         <tr>
                             <th scope="row"><?= $i ?></th>
                             
-                            <td><?= $m['jenis_paket']; ?></td>
-                            <td><?= $m['nama_paket']; ?></td>
-                            <td><?= $m['harga']; ?></td>
+                            <td><?= $m['nama_produk']; ?></td>
+                            <td><?= $m['deskripsi']; ?></td>
+
                             <td><?= $m['rias_busana']; ?></td>
                             <td><?= $m['dekorasi_pelaminan']; ?></td>
                             <td><?= $m['dokumentasi']; ?></td>
                             <td><?= $m['dekorasi_tenda']; ?></td>
                             <td><?= $m['support_acara']; ?></td>
-                            <td><?= $m['minimal_dp']; ?></td>
+                            
+                            <td><?= $m['harga']; ?></td>
+                            <td><?= $m['gambar']; ?></td>
+                            <td><?= $m['kategori']; ?></td>
+                            	
+                        
                             
                             <td>
                                 <a href="" class="badge badge-pill badge-success">edit</a>

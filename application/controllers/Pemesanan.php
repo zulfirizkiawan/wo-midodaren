@@ -31,7 +31,7 @@ class Pemesanan extends CI_Controller {
 		   $this->load->view('templates/sidebar_ad', $data);
 		   $this->load->view('templates/topbar_ad', $data);
 		   $this->load->view('pemesanan/list_produk',$data);
-		   $this->load->view('templates/footers');
+		   $this->load->view('templates/footer_ad');
 		} else {
 		   $this->db->insert('user_menu', ['menu' => $this->input->post('menu')]);
 		   $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> New Menu Added! </div>');
