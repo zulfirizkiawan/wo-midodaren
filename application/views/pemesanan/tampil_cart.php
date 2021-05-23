@@ -8,7 +8,7 @@
       <tr id="main_heading">
         <td width="2%">No</td>
         <td width="10%">Gambar</td>
-        <td width="33%">Item</td>
+        <td width="33%">Paket</td>
         <td width="17%">Harga</td>
         <td width="8%">Qty</td>
         <td width="20%">Jumlah</td>
