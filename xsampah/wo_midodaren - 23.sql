@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Bulan Mei 2021 pada 17.46
+-- Waktu pembuatan: 23 Bulan Mei 2021 pada 14.14
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.3
 
@@ -142,13 +142,6 @@ CREATE TABLE `tbl_detail_order` (
   `harga` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `tbl_detail_order`
---
-
-INSERT INTO `tbl_detail_order` (`id`, `order_id`, `produk`, `qty`, `harga`) VALUES
-(1, 1, 1, 1, '3500000');
-
 -- --------------------------------------------------------
 
 --
@@ -180,16 +173,6 @@ CREATE TABLE `tbl_order` (
   `pelanggan` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `tbl_order`
---
-
-INSERT INTO `tbl_order` (`id`, `tanggal`, `pelanggan`) VALUES
-(1, '2021-05-23', 1),
-(2, '2021-05-23', 2),
-(3, '2021-05-23', 3),
-(4, '2021-05-23', 4);
-
 -- --------------------------------------------------------
 
 --
@@ -203,16 +186,6 @@ CREATE TABLE `tbl_pelanggan` (
   `alamat` varchar(50) DEFAULT NULL,
   `telp` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tbl_pelanggan`
---
-
-INSERT INTO `tbl_pelanggan` (`id`, `nama`, `email`, `alamat`, `telp`) VALUES
-(1, 'ulum', 'admins@gmail.com', 'malang', '08389992810'),
-(2, 'ulum', 'admins@gmail.com', 'malang', '08389992810'),
-(3, 'ulum', 'admins@gmail.com', 'malang', '08389992810'),
-(4, 'ulum', 'admins@gmail.com', 'malang', '08389992810');
 
 -- --------------------------------------------------------
 
@@ -510,7 +483,7 @@ ALTER TABLE `paket`
 -- AUTO_INCREMENT untuk tabel `tbl_detail_order`
 --
 ALTER TABLE `tbl_detail_order`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_kategori`
@@ -522,13 +495,13 @@ ALTER TABLE `tbl_kategori`
 -- AUTO_INCREMENT untuk tabel `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_pelanggan`
 --
 ALTER TABLE `tbl_pelanggan`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_produk`
