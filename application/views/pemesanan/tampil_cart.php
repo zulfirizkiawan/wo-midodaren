@@ -35,7 +35,7 @@
           <td><?php echo number_format($item['price'], 0, ",", "."); ?></td>
           <td><input type="text" class="form-control input-sm" name="cart[<?php echo $item['id']; ?>][qty]" value="<?php echo $item['qty']; ?>" /></td>
           <td><?php echo number_format($item['subtotal'], 0, ",", ".") ?></td>
-          <td><a href="<?php echo base_url() ?>pemesanan/hapus/<?php echo $item['rowid']; ?>" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a></td>
+          <td><a href="<?php echo base_url() ?>pemesanan/hapus/<?php echo $item['rowid']; ?>" class="btn btn-danger"> hapus <i class="glyphicon glyphicon-remove"></i></a></td>
         <?php endforeach; ?>
         </tr>
         <tr>

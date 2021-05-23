@@ -45,8 +45,10 @@
                         
                             
                             <td>
-                                <!-- <a href="" class="badge badge-pill badge-success">edit</a>
-                                <a href="" class="badge badge-pill badge-danger">delete</a> -->
+                                <a href="https://api.whatsapp.com/send?phone=+<?= $m['telp']; ?>" class="badge badge-pill badge-success">Hubunggi</a>
+                                <!-- <a href="https://api.whatsapp.com/send?phone=+628123456789"> -->
+
+                                <!-- <a href="" class="badge badge-pill badge-danger"></a> -->
                             </td>
                         </tr>
                         <?php $i++; ?>
