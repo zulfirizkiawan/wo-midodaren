@@ -2,33 +2,68 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h2 mb-4 text-gray-800"><?= $title; ?></h1>
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data User</h6>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Username</th>
-                            <th>Date Created</th>
-                            <th>RoleID</th>
-                            <th>Images</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+    <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
+
+
+
+    <div class="row">
+        <div class="col-lg-6">
+            
+
+            
+
+            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newMenuModal">Add New Menu</a>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">nama paket</th>
+                        <th scope="col">nama pemesan</th>
                         
-                    </tbody>
-                </table>
-            </div>
+                        <th scope="col">telp</th>
+                        <th scope="col">tgl transaksi</th>
+                        <th scope="col">harga</th>
+                        
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $i = 1; ?>
+                    <?php foreach ($pesanans as $m) : ?>
+                        <tr>
+                            <th scope="row"><?= $i ?></th>
+                            
+                            <td><?= $m['nama_produk']; ?></td>
+                            <td><?= $m['nama']; ?></td>
+
+                            <td><?= $m['telp']; ?></td>
+                            <td><?= $m['tanggal']; ?></td>
+                            <td><?= $m['harga']; ?></td>
+                            
+                            	
+                        
+                            
+                            <td>
+                                <!-- <a href="" class="badge badge-pill badge-success">edit</a>
+                                <a href="" class="badge badge-pill badge-danger">delete</a> -->
+                            </td>
+                        </tr>
+                        <?php $i++; ?>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
         </div>
     </div>
-</div>  
+
+</div>
 <!-- /.container-fluid -->
 
 </div>
 <!-- End of Main Content -->
+
+<!-- Modal -->
+
+
+<!-- Modal -->
+<!--  -->

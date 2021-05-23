@@ -19,4 +19,28 @@ class Admin_model extends CI_Model
         $this->db->or_like('username', $keyword);
         return $this->db->get('user')->result_array();
     }
+
+    public  function pesanan()
+	{
+		$this->db->select('tbl_detail_order.id,
+        tbl_produk.nama_produk,
+        tbl_pelanggan.nama,
+        tbl_pelanggan.telp,
+        tbl_order.tanggal,
+        tbl_detail_order.harga');
+		$this->db->from('tbl_detail_order');
+		$this->db->join('tbl_produk', 'tbl_detail_order.produk=tbl_produk.id_produk','left');
+		$this->db->join('tbl_order', 'tbl_detail_order.order_id=tbl_order.id','left');
+		$this->db->join('tbl_pelanggan', 'tbl_order.pelanggan=tbl_pelanggan.id','left');
+        $querys = $this->db->get();
+        return $querys;
+    }	
+    // public function pesanan()
+    // {
+    //     $queryMenu = "SELECT tbl_detail_order.id, tbl_produk.nama_produk, tbl_pelanggan.nama, tbl_pelanggan.telp, tbl_order.tanggal, tbl_detail_order.harga FROM tbl_detail_order JOIN tbl_produk ON tbl_detail_order.produk=tbl_produk.id_produk JOIN tbl_order ON tbl_detail_order.order_id=tbl_order.id JOIN tbl_pelanggan ON tbl_order.pelanggan=tbl_pelanggan.id ";
+        // return $this->db->query($queryMenu)->result_array();
+    // }
+
+
 }
+

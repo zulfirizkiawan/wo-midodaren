@@ -16,20 +16,47 @@ class Admin extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
         // echo 'selamat datang ' . $data['user']['name'];
-
+        $data['pesanans'] = $this->Admin_model->pesanan()->result_array();
+        // $data['pesanan'] = $this->db->get('tbl_detail_order')->result_array();
+        //  $this->form_validation->set_rules('index', 'Admin', 'required');
+        
         $this->load->view('templates/header_ad', $data);
         $this->load->view('templates/sidebar_ad', $data);
         $this->load->view('templates/topbar_ad', $data);
         $this->load->view('admin/index', $data);
-        $this->load->view('templates/footer_ad',);
+        $this->load->view('templates/footer_ad');
     }
+
+    //      public function paket()
+    //    {
+    //       $data['title'] = 'paket';
+    //       $data['user'] = $this->db->get_where('user', ['email' =>
+    //       $this->session->userdata('email')])->row_array();
+    //       // echo 'selamat datang ' . $data['user']['name'];
+
+    //       $data['userp'] = $this->db->get('tbl_produk')->result_array();
+
+    //       $this->form_validation->set_rules('paket', 'User', 'required');
+
+    //       if ($this->form_validation->run() == false) {
+    //          $this->load->view('templates/header_ad', $data);
+    //          $this->load->view('templates/sidebar_ad', $data);
+    //          $this->load->view('templates/topbar_ad', $data);
+    //          $this->load->view('user/paket', $data);
+    //          $this->load->view('templates/footer_ad',);
+    //       } else {
+    //          $this->db->insert('tbl_paket', ['userp' => $this->input->post('paket')]);
+    //          $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> New Menu Added! </div>');
+    //          redirect('user/paket');
+    //       }
+    //    }
 
     // public function transaksi()
     // {
     //     $data['title'] = 'ManajemenK';
     //     $data['user'] = $this->db->get_where('user', ['email' =>
     //     $this->session->userdata('email')])->row_array();
-        
+
 
     //     $this->load->view('templates/header_ad', $data);
     //     $this->load->view('templates/sidebar_ad', $data);
@@ -47,7 +74,7 @@ class Admin extends CI_Controller
 
 
         $data['role'] = $this->db->get('user_role')->result_array();
-
+       
         $this->load->view('templates/header_ad', $data);
         $this->load->view('templates/sidebar_ad', $data);
         $this->load->view('templates/topbar_ad', $data);
@@ -69,7 +96,7 @@ class Admin extends CI_Controller
 
         $this->db->where('id !=', 1);
         // $data['menu'] = $this->menu->getUserMenuAll();
-        $data['menu'] = $this->db->get('user_menu')->result_array();   
+        $data['menu'] = $this->db->get('user_menu')->result_array();
 
         $this->load->view('templates/header_ad', $data);
         $this->load->view('templates/sidebar_ad', $data);
@@ -134,7 +161,4 @@ class Admin extends CI_Controller
         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $role['role'] . ' role is deleted!</div>');
         redirect('admin/role');
     }
-
-
-    
 }

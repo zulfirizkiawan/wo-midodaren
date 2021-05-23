@@ -115,6 +115,10 @@ class Pemesanan extends CI_Controller {
 
 	function ubah_cart()
 	{
+		$data['title'] = 'Pemesanan paket';
+		$data['user'] = $this->db->get_where('user', ['email' =>
+		$this->session->userdata('email')])->row_array();
+
 		$cart_info = $_POST['cart'] ;
 		foreach( $cart_info as $id => $cart)
 		{
@@ -135,6 +139,10 @@ class Pemesanan extends CI_Controller {
 
 	public function proses_order()
 	{
+		$data['title'] = 'Pemesanan paket';
+		$data['user'] = $this->db->get_where('user', ['email' =>
+		$this->session->userdata('email')])->row_array();
+		
 		//-------------------------Input data pelanggan--------------------------
 		$data_pelanggan = array('nama' => $this->input->post('nama'),
 							'email' => $this->input->post('email'),
