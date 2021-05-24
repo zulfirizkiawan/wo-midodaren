@@ -3,29 +3,29 @@
     <div class="kotak2">
 
         <img width="500px" height="500px" class="img-responsive" src="<?php echo base_url() . 'assets/images/' . $detail['gambar']; ?>" />
-        <h5>Harga: Rp. <?php echo number_format($detail['harga'], 0, ",", "."); ?></h5>
+        <h5><br>Harga: Rp. <?php echo number_format($detail['harga'], 0, ",", "."); ?></h5>
         <p class="card-text">
-            <strong> <u>Deskripsi</u></strong><br>
+            <strong> <br> <u>DESKIRPSI</u></strong><br>
             <?php echo $detail['deskripsi']; ?>
         </p>
         <p class="card-text">
-            <strong> <u>rias_busana</u></strong><br>
+            <strong> <u>RIAS BUASANA</u></strong><br>
             <?php echo $detail['rias_busana']; ?>
         </p>
         <p class="card-text">
-            <strong> <u>dekorasi_pelaminan</u></strong><br>
+            <strong> <u>DEKORASI PELAMINAN</u></strong><br>
             <?php echo $detail['dekorasi_pelaminan']; ?>
         </p>
         <p class="card-text">
-            <strong> <u>dokumentasi</u></strong><br>
+            <strong> <u>DOKUMENTASI</u></strong><br>
             <?php echo $detail['dokumentasi']; ?>
         </p>
         <p class="card-text">
-            <strong> <u>dekorasi_tenda</u></strong><br>
+            <strong> <u>DEKORASI TENDA</u></strong><br>
             <?php echo $detail['dekorasi_tenda']; ?>
         </p>
         <p class="card-text">
-            <strong> <u>support_acara</u></strong><br>
+            <strong> <u>SUPPORT ACARA</u></strong><br>
             <?php echo $detail['support_acara']; ?>
         </p>
 
@@ -35,7 +35,7 @@
 
         <input type="hidden" name="id" value="<?php echo $detail['id_produk']; ?>" />
         <input type="hidden" name="nama" value="<?php echo $detail['nama_produk']; ?>" />
-        
+
         <input type="hidden" name="harga" value="<?php echo $detail['harga']; ?>" />
         <input type="hidden" name="gambar" value="<?php echo $detail['gambar']; ?>" />
         <input type="hidden" name="qty" value="1" />

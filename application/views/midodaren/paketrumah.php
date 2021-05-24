@@ -12,7 +12,7 @@
                         <li class="active"><a href="<?php echo base_url(); ?>midodaren/index">Home</a></li>
                         <li class="has-dropdown">
                             <a>Paket Wedding</a>
-                            <i class="fas fa-angle-down"></i>
+                       
                             <ul class="dropdown">
                                 <li><a href="<?php echo base_url(); ?>midodaren/paketrumah">Paket Wedding Rumah</a></li>
                                 <li><a href="<?php echo base_url(); ?>midodaren/pakethotel">Paket Wedding Hotel</a></li>
@@ -59,25 +59,41 @@
             </div>
             <div class="row row-bottom-padded-md">
                 <div class="col-md-12">
-                    <ul id="fh5co-gallery-list">
+                    <div class="row">
+                        <?php
+                        foreach ($produk as $row) {
+                        ?>
+                            <div class="col-lg-4">
+                                <div class="kotak">
+                                    <br>
+                                    <br>
+                                    <form method="post" action="<?php echo base_url(); ?>pemesanan/tambah" method="post" accept-charset="utf-8">
+                                        <a href="#"><img class="img-thumbnail" src="<?php echo base_url() . 'assets/images/' . $row['gambar']; ?>" /></a>
+                                        <div class="card-body">
+                                            <h4 class="card-title">
+                                                <a href="#"><?php echo $row['nama_produk']; ?></a>
+                                            </h4>
+                                            <h5>Rp. <?php echo number_format($row['harga'], 0, ",", "."); ?></h5>
+                                            <p class="card-text"><?php echo $row['deskripsi']; ?></p>
+                                        </div>
+                                        <br>
+                                        <div class="card-footer">
+                                            <a href="<?php echo base_url(); ?>pemesanan/detail_produk/<?php echo $row['id_produk']; ?>" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-search"></i> Detail</a>
 
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-1.jpg); ">
-                            <a href="<?php echo base_url(); ?>assets/images/gallery-1.jpg">
-                                <div class="case-studies-summary">
-                                    <span>14 Photos</span>
-                                    <h2>Two Glas of Juice</h2>
+                                            <input type="hidden" name="id" value="<?php echo $row['id_produk']; ?>" />
+                                            <input type="hidden" name="nama" value="<?php echo $row['nama_produk']; ?>" />
+                                            <input type="hidden" name="harga" value="<?php echo $row['harga']; ?>" />
+                                            <input type="hidden" name="gambar" value="<?php echo $row['gambar']; ?>" />
+                                            <input type="hidden" name="qty" value="1" />
+                                            <button type="submit" class="btn btn-sm btn-success"><i class="glyphicon glyphicon-shopping-cart"></i> Beli</button>
+                                        </div>
+                                    </form>
                                 </div>
-                            </a>
-                        </li>
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-2.jpg); ">
-                            <a href="#" class="color-2">
-                                <div class="case-studies-summary">
-                                    <span>30 Photos</span>
-                                    <h2>Timer starts now!</h2>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    </div>
                 </div>
 
             </div>

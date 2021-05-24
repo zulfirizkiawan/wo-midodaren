@@ -12,7 +12,7 @@
                         <li class="active"><a href="<?php echo base_url(); ?>midodaren/index">Home</a></li>
                         <li class="has-dropdown">
                             <a>Paket Wedding</a>
-                            <i class="fas fa-angle-down"></i>
+                            
                             <ul class="dropdown">
                                 <li><a href="<?php echo base_url(); ?>midodaren/paketrumah">Paket Wedding Rumah</a></li>
                                 <li><a href="<?php echo base_url(); ?>midodaren/pakethotel">Paket Wedding Hotel</a></li>
@@ -56,27 +56,40 @@
                     <h2>Foto Galeri</h2>
                     <p>Apakah Anda mendambakan pernikahan impian Anda seperti ini? Tujuan kami adalah mewujudkan pernikahan impian Anda menjadi nyata.</p>
                 </div>
-            </div>
+            </div> 
             <div class="row row-bottom-padded-md">
                 <div class="col-md-12">
                     <ul id="fh5co-gallery-list">
 
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-1.jpg); ">
-                            <a href="<?php echo base_url(); ?>assets/images/gallery-1.jpg">
+                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image:url(<?php echo base_url('assets/images/g1.jpg') ?>)">
+                            <a href="<?php echo base_url(); ?>assets/images/g1.jpg">
                                 <div class="case-studies-summary">
-                                    <span>14 Photos</span>
-                                    <h2>Two Glas of Juice</h2>
+
                                 </div>
                             </a>
                         </li>
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-2.jpg); ">
-                            <a href="#" class="color-2">
+                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image:url(<?php echo base_url('assets/images/g2.jpg') ?>)">
+                            <a href="<?php echo base_url(); ?>assets/images/g2.jpg">
                                 <div class="case-studies-summary">
-                                    <span>30 Photos</span>
-                                    <h2>Timer starts now!</h2>
+
                                 </div>
                             </a>
                         </li>
+                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image:url(<?php echo base_url('assets/images/g3.jpg') ?>)">
+                            <a href="<?php echo base_url(); ?>assets/images/g3.jpg">
+                                <div class="case-studies-summary">
+
+                                </div>
+                            </a>
+                        </li>
+                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image:url(<?php echo base_url('assets/images/g4.jpeg') ?>)">
+                            <a href="<?php echo base_url(); ?>assets/images/g4.jpeg">
+                                <div class="case-studies-summary">
+
+                                </div>
+                            </a>
+                        </li>
+
                     </ul>
                 </div>
             </div>

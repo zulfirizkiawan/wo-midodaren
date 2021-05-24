@@ -12,7 +12,7 @@
                         <li class="active"><a href="<?php echo base_url(); ?>midodaren/index">Home</a></li>
                         <li class="has-dropdown">
                             <a>Paket Wedding</a>
-                            <i class="fas fa-angle-down"></i>
+                           
                             <ul class="dropdown">
                                 <li><a href="<?php echo base_url(); ?>midodaren/paketrumah">Paket Wedding Rumah</a></li>
                                 <li><a href="<?php echo base_url(); ?>midodaren/pakethotel">Paket Wedding Hotel</a></li>

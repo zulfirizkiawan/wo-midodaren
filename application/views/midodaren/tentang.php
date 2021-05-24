@@ -12,7 +12,7 @@
                         <li class="active"><a href="<?php echo base_url(); ?>midodaren/index">Home</a></li>
                         <li class="has-dropdown">
                             <a>Paket Wedding</a>
-                            <i class="fas fa-angle-down"></i>
+                        
                             <ul class="dropdown">
                                 <li><a href="<?php echo base_url(); ?>midodaren/paketrumah">Paket Wedding Rumah</a></li>
                                 <li><a href="<?php echo base_url(); ?>midodaren/pakethotel">Paket Wedding Hotel</a></li>
@@ -114,7 +114,7 @@
             <div class="row row-bottom-padded-md">
                 <div class="col-md-12">
                     <ul id="fh5co-gallery-list">
-                        <li class="one-third animate-box" style="background-image: url(images/gallery-1.jpg); ">
+                        <li class="one-third animate-box" style="background-image: url(<?php echo base_url('assets/images/rizki.jpg') ?>); ">
                             <a class="color-1">
                                 <div class="case-studies-summary">
                                     <h2>Zulfi</h2>
@@ -122,7 +122,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="one-third animate-box" style="background-image: url(images/gallery-2.jpg); ">
+                        <li class="one-third animate-box" style="background-image: url(<?php echo base_url('assets/images/ulum.jpeg') ?>); ">
                             <a class="color-2">
                                 <div class="case-studies-summary">
                                     <h2>Ulum</h2>
@@ -130,7 +130,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="one-third animate-box" style="background-image: url(images/gallery-4.jpg); ">
+                        <li class="one-third animate-box" style="background-image: url(<?php echo base_url('assets/images/peter.jpeg') ?>); ">
                             <a class="color-4">
                                 <div class="case-studies-summary">
                                     <h2>Fatim</h2>
@@ -138,7 +138,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="one-third animate-box" style="background-image: url(images/gallery-3.jpg); ">
+                        <li class="one-third animate-box" style="background-image: url(<?php echo base_url('assets/images/fatim.jpeg') ?>); ">
                             <a class="color-3">
                                 <div class="case-studies-summary">
                                     <h2>Peter</h2>
