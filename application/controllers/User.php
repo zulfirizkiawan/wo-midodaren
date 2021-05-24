@@ -7,6 +7,7 @@ class User extends CI_Controller
    {
       parent::__construct();
       is_logged_in();
+      $this->load->model('User_model');
    }
 
    public function index()
@@ -102,4 +103,21 @@ class User extends CI_Controller
          redirect('user');
       }
    }
+
+   public function detail_pesanan()
+   {
+       $data['title'] = 'Detail Pesanan';
+       $data['user'] = $this->db->get_where('user', ['email' =>
+       $this->session->userdata('email')])->row_array();
+      
+       $data['pesananu'] = $this->User_model->pesananU()->result_array();
+      
+
+       $this->load->view('templates/header_ad', $data);
+       $this->load->view('templates/sidebar_ad', $data);
+       $this->load->view('templates/topbar_ad', $data);
+       $this->load->view('user/detailpemesanan', $data);
+       $this->load->view('templates/footer_ad');
+   }
+
 }

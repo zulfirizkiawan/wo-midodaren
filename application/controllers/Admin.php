@@ -171,7 +171,7 @@ class Admin extends CI_Controller
       $this->session->userdata('email')])->row_array();
 
       //Alias
-      $this->load->model('Admin_model');
+    //   $this->load->model('Admin_model');
     //   $data['subMenu'] = $this->admin->getSubMenu();
       // $data['subMenu'] = $this->db->get('user_sub_menu')->result_array();
       $data['kategori'] = $this->db->get('tbl_kategori')->result_array();
