@@ -65,6 +65,8 @@
                         ?>
                             <div class="col-lg-4">
                                 <div class="kotak">
+                                    <br>
+                                    <br>
                                     <form method="post" action="<?php echo base_url(); ?>pemesanan/tambah" method="post" accept-charset="utf-8">
                                         <a href="#"><img class="img-thumbnail" src="<?php echo base_url() . 'assets/images/' . $row['gambar']; ?>" /></a>
                                         <div class="card-body">
@@ -74,6 +76,7 @@
                                             <h5>Rp. <?php echo number_format($row['harga'], 0, ",", "."); ?></h5>
                                             <p class="card-text"><?php echo $row['deskripsi']; ?></p>
                                         </div>
+                                        <br>
                                         <div class="card-footer">
                                             <a href="<?php echo base_url(); ?>pemesanan/detail_produk/<?php echo $row['id_produk']; ?>" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-search"></i> Detail</a>
 
