@@ -12,7 +12,7 @@
                         <li class="active"><a href="<?php echo base_url(); ?>midodaren/index">Home</a></li>
                         <li class="has-dropdown">
                             <a>Paket Wedding</a>
-                            <i class="fas fa-angle-down"></i>
+                          
                             <ul class="dropdown">
                                 <li><a href="<?php echo base_url(); ?>midodaren/paketrumah">Paket Wedding Rumah</a></li>
                                 <li><a href="<?php echo base_url(); ?>midodaren/pakethotel">Paket Wedding Hotel</a></li>
@@ -123,26 +123,15 @@
                 <div class="display-t">
                     <div class="display-tc">
                         <div class="col-md-10 col-md-offset-1">
-                            <div class="col-md-6 col-sm-6 text-center">
-                                <div class="event-wrap animate-box">
-                                    <h3>Main Ceremony</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6 text-center">
-                                <div class="event-wrap animate-box">
-                                    <h3>Wedding Party</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                </div>
-                            </div>
+
                             <div class="col-md-6 col-sm-6 text-center">
                                 <form method="" class="text-button" action="<?php echo base_url(); ?>midodaren/paketrumah">
-                                    <button id="submit-buttons" class="button1" type="submit" ​​​​​>Paket WO rumah lainnya</button>
+                                    <button id="submit-buttons" class="button1" type="submit" ​​​​​>Paket Wedding Rumah</button>
                                 </form>
                             </div>
                             <div class="col-md-6 col-sm-6 text-center">
                                 <form method="" class="text-button" action="<?php echo base_url(); ?>midodaren/pakethotel">
-                                    <button id="submit-buttons" class="button1" type="submit" ​​​​​>Paket WO hotel lainnya</button>
+                                    <button id="submit-buttons" class="button1" type="submit" ​​​​​>Paket Wedding Hotel</button>
                                 </form>
                             </div>
 
@@ -188,98 +177,92 @@
                     </div>
 
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="feature-left animate-box" data-animate-effect="fadeInRight">
-                            <span class="icon">
-                                <i class="fa fa-magic"></i>
-                            </span>
-                            <div class="feature-copy">
-                                <h3>Hiburan</h3>
-                                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-                            </div>
+                <div class="col-md-6 animate-box">
+                    <div class="feature-left animate-box" data-animate-effect="fadeInRight">
+                        <span class="icon">
+                            <i class="fa fa-magic"></i>
+                        </span>
+                        <div class="feature-copy">
+                            <h3>Hiburan</h3>
+                            <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
                         </div>
-
-                        <div class="feature-left animate-box" data-animate-effect="fadeInRight">
-                            <span class="icon">
-                                <i class="fa fa-building"></i>
-                            </span>
-                            <div class="feature-copy">
-                                <h3>Tempat Pernikahan</h3>
-                                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-                            </div>
-                        </div>
-
                     </div>
-                </div>
 
+                    <div class="feature-left animate-box" data-animate-effect="fadeInRight">
+                        <span class="icon">
+                            <i class="fa fa-building"></i>
+                        </span>
+                        <div class="feature-copy">
+                            <h3>Tempat Pernikahan</h3>
+                            <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <br>
-            <br>
-            <form method="" class="text-center" action="<?php echo base_url(); ?>midodaren/layanan">
-                <button id="submit-buttons" class="button1" type="submit" ​​​​​>Lihat Selengkapnya</button>
-            </form>
 
         </div>
+        <br>
+        <br>
+        <form method="" class="text-center" action="<?php echo base_url(); ?>midodaren/layanan">
+            <button id="submit-buttons" class="button1" type="submit" ​​​​​>Lihat Selengkapnya</button>
+        </form>
+
     </div>
+</div>
 
-    <div id="fh5co-gallery" class="fh5co-section-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                    <h2>Galeri Pernikahan</h2>
-                    <p>Pernikahan harus 1 (satu) dalam seumur hidup jadi kita harus membuat kenangan indah dalam pernikahan.</p>
-                </div>
+<div id="fh5co-gallery" class="fh5co-section-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+                <h2>Galeri Pernikahan</h2>
+                <p>Pernikahan harus 1 (satu) dalam seumur hidup jadi kita harus membuat kenangan indah dalam pernikahan.</p>
             </div>
-            <div class="row row-bottom-padded-md">
-                <div class="col-md-12">
-                    <ul id="fh5co-gallery-list">
-
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(<?php echo base_url('assets/images/gallery-1.jpg') ?>">
-                            <a href="<?php echo base_url(); ?>assets/images/gallery-1.jpg">
-                                <div class="case-studies-summary">
-                                    <span>14 Photos</span>
-                                    <h2>Two Glas of Juice</h2>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(<?php echo base_url('assets/images/gallery-2.jpg') ?>">
-                            <a href="#" class="color-2">
-                                <div class="case-studies-summary">
-                                    <span>30 Photos</span>
-                                    <h2>Timer starts now!</h2>
-                                </div>
-                            </a>
-                        </li>
-
-
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(<?php echo base_url('assets/images/gallery-3.jpg') ?> ">
-                            <a href="#" class="color-3">
-                                <div class="case-studies-summary">
-                                    <span>90 Photos</span>
-                                    <h2>Beautiful sunset</h2>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(<?php echo base_url('assets/images/gallery-4.jpg') ?> ">
-                            <a href="#" class="color-4">
-                                <div class="case-studies-summary">
-                                    <span>12 Photos</span>
-                                    <h2>Company's Conference Room</h2>
-                                </div>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-            <br>
-            <br>
-            <form method="" class="text-center" action="<?php echo base_url(); ?>midodaren/galeri">
-                <button id="submit-buttons" class="button1" type="submit" ​​​​​>Lihat Selengkapnya</button>
-            </form>
         </div>
+        <div class="row row-bottom-padded-md">
+            <div class="col-md-12">
+                <ul id="fh5co-gallery-list">
+
+                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image:url(<?php echo base_url('assets/images/g1.jpg') ?>)">
+                        <a href="<?php echo base_url(); ?>assets/images/g1.jpg">
+                            <div class="case-studies-summary">
+
+                            </div>
+                        </a>
+                    </li>
+                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image:url(<?php echo base_url('assets/images/g2.jpg') ?>)">
+                        <a href="<?php echo base_url(); ?>assets/images/g2.jpg">
+                            <div class="case-studies-summary">
+
+                            </div>
+                        </a>
+                    </li>
+                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image:url(<?php echo base_url('assets/images/g3.jpg') ?>)">
+                        <a href="<?php echo base_url(); ?>assets/images/g3.jpg">
+                            <div class="case-studies-summary">
+
+                            </div>
+                        </a>
+                    </li>
+                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image:url(<?php echo base_url('assets/images/g4.jpeg') ?>)">
+                        <a href="<?php echo base_url(); ?>assets/images/g4.jpeg">
+                            <div class="case-studies-summary">
+
+                            </div>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+        <br>
+        <br>
+        <form method="" class="text-center" action="<?php echo base_url(); ?>midodaren/galeri">
+            <button id="submit-buttons" class="button1" type="submit" ​​​​​>Lihat Selengkapnya</button>
+        </form>
     </div>
+</div>
 
 </div>
 

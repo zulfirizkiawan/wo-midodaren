@@ -12,7 +12,7 @@
                         <li class="active"><a href="<?php echo base_url(); ?>midodaren/index">Home</a></li>
                         <li class="has-dropdown">
                             <a>Paket Wedding</a>
-                            <i class="fas fa-angle-down"></i>
+                          
                             <ul class="dropdown">
                                 <li><a href="<?php echo base_url(); ?>midodaren/paketrumah">Paket Wedding Rumah</a></li>
                                 <li><a href="<?php echo base_url(); ?>midodaren/pakethotel">Paket Wedding Hotel</a></li>
@@ -101,49 +101,50 @@
                     </div>
 
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="feature-left animate-box" data-animate-effect="fadeInRight">
-                            <span class="icon">
-                                <i class="fa fa-magic"></i>
-                            </span>
-                            <div class="feature-copy">
-                                <h3>Hiburan</h3>
-                                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-                            </div>
-                        </div>
 
-                        <div class="feature-left animate-box" data-animate-effect="fadeInRight">
-                            <span class="icon">
-                                <i class="fa fa-building"></i>
-                            </span>
-                            <div class="feature-copy">
-                                <h3>Tempat Pernikahan</h3>
-                                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-                            </div>
-                        </div>
+                <div class="col-md-6 animate-box">
 
-                        <div class="feature-left animate-box" data-animate-effect="fadeInRight">
-                            <span class="icon">
-                                <i class="fas fa-concierge-bell"></i>
-                            </span>
-                            <div class="feature-copy">
-                                <h3>Katering</h3>
-                                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-                            </div>
+                    <div class="feature-left animate-box" data-animate-effect="fadeInRight">
+                        <span class="icon">
+                            <i class="fa fa-magic"></i>
+                        </span>
+                        <div class="feature-copy">
+                            <h3>Hiburan</h3>
+                            <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
                         </div>
-
-                        <div class="feature-left animate-box" data-animate-effect="fadeInRight">
-                            <span class="icon">
-                                <i class="fas fa-hat-wizard"></i>
-                            </span>
-                            <div class="feature-copy">
-                                <h3>Tata Rias pengantin</h3>
-                                <p>Kami Memiliki Team yang Profesional dan Berpengalaman Sebagai Penata Rias Pengantin dan Bersertifikat.</p>
-                            </div>
-                        </div>
-
                     </div>
+
+                    <div class="feature-left animate-box" data-animate-effect="fadeInRight">
+                        <span class="icon">
+                            <i class="fa fa-building"></i>
+                        </span>
+                        <div class="feature-copy">
+                            <h3>Tempat Pernikahan</h3>
+                            <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-left animate-box" data-animate-effect="fadeInRight">
+                        <span class="icon">
+                            <i class="fas fa-concierge-bell"></i>
+                        </span>
+                        <div class="feature-copy">
+                            <h3>Katering</h3>
+                            <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-left animate-box" data-animate-effect="fadeInRight">
+                        <span class="icon">
+                            <i class="fas fa-hat-wizard"></i>
+                        </span>
+                        <div class="feature-copy">
+                            <h3>Tata Rias pengantin</h3>
+                            <p>Kami Memiliki Team yang Profesional dan Berpengalaman Sebagai Penata Rias Pengantin dan Bersertifikat.</p>
+                        </div>
+                    </div>
+
+                    \
                 </div>
 
             </div>
