@@ -162,4 +162,43 @@ class Admin extends CI_Controller
         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $role['role'] . ' role is deleted!</div>');
         redirect('admin/role');
     }
+
+    public function submenu()
+   {
+
+      $data['title'] = 'Submenu Management';
+      $data['user'] = $this->db->get_where('user', ['email' =>
+      $this->session->userdata('email')])->row_array();
+
+      //Alias
+      $this->load->model('Admin_model');
+    //   $data['subMenu'] = $this->admin->getSubMenu();
+      // $data['subMenu'] = $this->db->get('user_sub_menu')->result_array();
+      $data['kategori'] = $this->db->get('tbl_kategori')->result_array();
+
+    //   $this->form_validation->set_rules('title', 'Title', 'required');
+    //   $this->form_validation->set_rules('menu_id', 'Menu', 'required');
+    //   $this->form_validation->set_rules('url', 'URL', 'required');
+    //   $this->form_validation->set_rules('icon', 'icon', 'required');
+
+    //   if ($this->form_validation->run() == false) {
+         $this->load->view('templates/header_ad', $data);
+         $this->load->view('templates/sidebar_ad', $data);
+         $this->load->view('templates/topbar_ad', $data);
+         $this->load->view('admin/paket', $data);
+         $this->load->view('templates/footer_ad');
+    //   } else {
+    //      $data = [
+    //         'title' => $this->input->post('title'),
+    //         'menu_id' => $this->input->post('menu_id'),
+    //         'url  ' => $this->input->post('url'),
+    //         'icon' => $this->input->post('icon'),
+    //         'is_active' => $this->input->post('is_active')
+    //      ];
+    //      $this->db->insert('user_sub_menu', $data);
+    //      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> New Submenu Added! </div>');
+    //      redirect('menu/submenu');
+    //   }
+   }
+
 }

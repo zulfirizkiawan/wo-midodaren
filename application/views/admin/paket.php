@@ -7,12 +7,12 @@
 
 
     <div class="row">
-        <div class="col-lg-5">
+        <div class="col-lg-3">
             <?= form_error('user', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
 
             <?= $this->session->flashdata('message') ?>
 
-            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newMenuModal">Add New Menu</a>
+            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newTambahPaket">Tambah Paket</a>
 
             <table class="table table-hover">
                 <thead>
@@ -79,21 +79,71 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="newMenuModal" tabindex="-1" aria-labelledby="newMenuModalLabel" aria-hidden="true">
+<div class="modal fade" id="newTambahPaket" tabindex="-1" aria-labelledby="newTambahPaketLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="newMenuModalLabel">Add New Menu</h5>
+                <h5 class="modal-title" id="newTambahPaketLabel">Tambah Paket</h5>
+
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('user/paket');  ?>" method="post">
+            <form action="<?= base_url('admin/paket');  ?>" method="post">
+
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="paket" name="paket" placeholder="Menu name">
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Nama Paket">
                     </div>
-                </div>
+
+                    <div class="form-group">
+                        <select name="kategori-id" id="kategori-id" class="form-control">
+                            <option value="">Select Kategori</option>
+
+                            <?php foreach ($kategori as $m) : ?>
+                                <option value="<?= $m['id'] ?>">
+
+                                <?= $m['nama_kategori']; ?>
+
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Deskripsi Paket">
+                    </div>
+
+                    <!-- rias_busana	 -->
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="ria_ Busana" name="rias_busana" placeholder="Rias Busana">
+                    </div>
+                    <!-- dekorasi_pelaminan	 -->
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="dekorasi_pelaminan	" name="dekorasi_pelaminan	" placeholder="dekorasi_pelaminan	">
+                    </div>
+                    <!-- dokumentasi	 -->
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="dokumentasi" name="dokumentasi" placeholder="dokumentasi">
+                    </div>
+                    <!-- dekorasi_tenda	 -->
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="dekorasi_tenda" name="dekorasi_tenda" placeholder="dekorasi_tenda">
+                    </div>
+                    <!-- support_acara	 -->
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="support_acara" name="support_acara" placeholder="support_acara">
+                    </div>
+                    <!-- harga	 -->
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="harga" name="harga" placeholder="harga">
+                    </div>
+                    <!-- gambar -->
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="gambar" name="gambar" placeholder="gambar">
+                    </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Add</button>

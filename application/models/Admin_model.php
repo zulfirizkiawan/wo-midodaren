@@ -41,6 +41,12 @@ class Admin_model extends CI_Model
         // return $this->db->query($queryMenu)->result_array();
     // }
 
+    // public function getSubMenu()
+    // {
+    //     $query = "SELECT tbl_kategori.nama_kategori FROM tbl_kategori WHERE tbl_kategori.id";
+    //     return $this->db->query($query)->result_array();
+    // }
 
+    
 }
 
