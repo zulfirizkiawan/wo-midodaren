@@ -7,7 +7,7 @@
 
 
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-5">
             <?= form_error('user', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
 
             <?= $this->session->flashdata('message') ?>
@@ -27,8 +27,8 @@
                         <th scope="col">dekorasi_tenda</th>
                         <th scope="col">support_acara</th>
 
+                        <th scope="col">harga</th>
                         <th scope="col">gambar</th>
-                        <th scope="col">kategori</th>
 
                         
 
@@ -53,7 +53,7 @@
                             
                             <td><?= $m['harga']; ?></td>
                             <td><?= $m['gambar']; ?></td>
-                            <td><?= $m['kategori']; ?></td>
+                            
                             	
                         
                             
