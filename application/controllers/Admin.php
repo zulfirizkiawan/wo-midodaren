@@ -17,7 +17,7 @@ class Admin extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
         // echo 'selamat datang ' . $data['user']['name'];
-        $data['pesanans'] = $this->Admin_model->pesanan()->result_array();
+        
         // $data['pesanan'] = $this->db->get('tbl_detail_order')->result_array();
         //  $this->form_validation->set_rules('index', 'Admin', 'required');
 
@@ -52,19 +52,20 @@ class Admin extends CI_Controller
         }
     }
 
-    // public function transaksi()
-    // {
-    //     $data['title'] = 'ManajemenK';
-    //     $data['user'] = $this->db->get_where('user', ['email' =>
-    //     $this->session->userdata('email')])->row_array();
+    public function transaksi()
+    {
+        $data['title'] = 'DaftarPemesan';
+        $data['user'] = $this->db->get_where('user', ['email' =>
+        $this->session->userdata('email')])->row_array();
 
-
-    //     $this->load->view('templates/header_ad', $data);
-    //     $this->load->view('templates/sidebar_ad', $data);
-    //     $this->load->view('templates/topbar_ad', $data);
-    //     $this->load->view('admin/transaksi', $data);
-    //     $this->load->view('templates/footer_ad',);
-    // }
+        $data['pesanans'] = $this->Admin_model->pesanan()->result_array();
+        
+        $this->load->view('templates/header_ad', $data);
+        $this->load->view('templates/sidebar_ad', $data);
+        $this->load->view('templates/topbar_ad', $data);
+        $this->load->view('admin/transaksi', $data);
+        $this->load->view('templates/footer_ad',);
+    }
 
     public function role()
     {
