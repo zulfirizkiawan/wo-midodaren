@@ -38,7 +38,7 @@
                                 <a href="https://api.whatsapp.com/send?phone=+<?= $m['telp']; ?>" class="badge badge-pill badge-success">Hubunggi</a>
                                 <!-- <a href="https://api.whatsapp.com/send?phone=+628123456789"> -->
 
-                                <!-- <a href="" class="badge badge-pill badge-danger"></a> -->
+                                <a href="" class="badge badge-pill badge-primary"> Konfirmasi </a>
                             </td>
                         </tr>
                         <?php $i++; ?>
