@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Jun 2021 pada 07.35
+-- Waktu pembuatan: 23 Bulan Mei 2021 pada 17.46
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.3
 
@@ -147,8 +147,7 @@ CREATE TABLE `tbl_detail_order` (
 --
 
 INSERT INTO `tbl_detail_order` (`id`, `order_id`, `produk`, `qty`, `harga`) VALUES
-(1, 1, 1, 1, '3500000'),
-(2, 5, 1, 1, '3600000');
+(1, 1, 1, 1, '3500000');
 
 -- --------------------------------------------------------
 
@@ -189,8 +188,7 @@ INSERT INTO `tbl_order` (`id`, `tanggal`, `pelanggan`) VALUES
 (1, '2021-05-23', 1),
 (2, '2021-05-23', 2),
 (3, '2021-05-23', 3),
-(4, '2021-05-23', 4),
-(5, '2021-06-12', 5);
+(4, '2021-05-23', 4);
 
 -- --------------------------------------------------------
 
@@ -211,11 +209,10 @@ CREATE TABLE `tbl_pelanggan` (
 --
 
 INSERT INTO `tbl_pelanggan` (`id`, `nama`, `email`, `alamat`, `telp`) VALUES
-(1, 'ulum', 'admins@gmail.com', 'malang', '628389992810'),
+(1, 'ulum', 'admins@gmail.com', 'malang', '08389992810'),
 (2, 'ulum', 'admins@gmail.com', 'malang', '08389992810'),
 (3, 'ulum', 'admins@gmail.com', 'malang', '08389992810'),
-(4, 'ulum', 'admins@gmail.com', 'malang', '08389992810'),
-(5, 'asdsa', 'adsad@gmail.com', 'asd', '21312');
+(4, 'ulum', 'admins@gmail.com', 'malang', '08389992810');
 
 -- --------------------------------------------------------
 
@@ -242,12 +239,12 @@ CREATE TABLE `tbl_produk` (
 --
 
 INSERT INTO `tbl_produk` (`id_produk`, `nama_produk`, `deskripsi`, `rias_busana`, `dekorasi_pelaminan`, `dokumentasi`, `dekorasi_tenda`, `support_acara`, `harga`, `gambar`, `kategori`) VALUES
-(1, 'Paket Rumah Rosella', '', '\n    Rias akad nikah dan temu\n    Rias resepsi\n    Busana pengantin (3 pasang) – dipinjamkan\n    Rias dan busana ibu pengantin dan ibu besan (2 orang)\n    Rias dan busana untuk among tamu (2 orang)\n    Rias dan busana untuk pagar ayu (2 orang)\n    Busana beskap untuk bapak dan bapak besan (2 orang)\n    Busana beskap untuk pagar bagus (2 orang)\n    Ronce melati segar lengkap untuk pengantin (di hari yang sama)\n    Bando melati segar buat ibu dan ibu besan (di hari yang sama)\n', '\n\n    Pelaminan rumah 3-6 meter\n    panggung (t=40 cm) + karpet panggung\n    Sofa Pelaminan + 4 Kursi Ortu\n    Penjor dan pregola (pintu masuk)\n    Taman depan pelaminan\n    Standing flower (bunga hidup) + Lampu Sorot\n    Janur kembar mayang (4 unit)\n    Tombang Pundi Uang (2 unit)\n\n', '', '', '', '3600000', 'paket-01.jpg', 1),
+(1, 'Paket Rumah Rosella', '', '\n    Rias akad nikah dan temu\n    Rias resepsi\n    Busana pengantin (3 pasang) – dipinjamkan\n    Rias dan busana ibu pengantin dan ibu besan (2 orang)\n    Rias dan busana untuk among tamu (2 orang)\n    Rias dan busana untuk pagar ayu (2 orang)\n    Busana beskap untuk bapak dan bapak besan (2 orang)\n    Busana beskap untuk pagar bagus (2 orang)\n    Ronce melati segar lengkap untuk pengantin (di hari yang sama)\n    Bando melati segar buat ibu dan ibu besan (di hari yang sama)\n', '\n\n    Pelaminan rumah 3-6 meter\n    panggung (t=40 cm) + karpet panggung\n    Sofa Pelaminan + 4 Kursi Ortu\n    Penjor dan pregola (pintu masuk)\n    Taman depan pelaminan\n    Standing flower (bunga hidup) + Lampu Sorot\n    Janur kembar mayang (4 unit)\n    Tombang Pundi Uang (2 unit)\n\n', '', '', '', '3500000', 'paket-01.jpg', 1),
 (2, 'Paket Ngunduh Mantu', '', '\n\n    Paket Rias Pengantin – (1x Rias, 1x Retouch)\n    Paket Busana Pengantin – 2 Pasang Busana\n    Paket Rias Busana bapak-ibu besan (2 pasang)\n    Paket Rias busana among tamu (2 pasang)\n    Paket Ronce Melati Pengantin & Ortu\n\n', '\n\n    Pelaminan rumah 3-6 meter\n    panggung (t=40 cm) + karpet panggung\n    Sofa Pelaminan + 4 Kursi Ortu\n    Penjor dan pregola (pintu masuk)\n    Taman depan pelaminan\n    Standing flower (bunga hidup) + Lampu Sorot\n    Tombang Pundi Uang (2 unit)\n    Free : Hand Bucker Fresh Flower\n\n', 'Foto Unlimited', '\n\n    Tenda drefteri ukuran 4×6 meter (3 unit) + Lampu mercuri / setara\n    Kursi tamu dan cover (100 unit)\n    Meja + Cover ukuran (60×120 cm) 7 unit\n\n', '1 kru support acara', '6250000', 'paket-02.jpg', 1),
 (3, 'Paket Rumah Tulip', '', '\n\n    Rias akad nikah dan temu\n    Rias resepsi\n    Busana pengantin (3 pasang) – dipinjamkan\n    Rias dan busana ibu pengantin dan ibu besan (2 orang)\n    Rias dan busana untuk among tamu (2 orang)\n    Rias dan busana untuk pagar ayu (2 orang)\n    Busana beskap untuk bapak dan bapak besan (2 orang)\n    Busana beskap untuk pagar bagus (2 orang)\n    Ronce melati segar lengkap untuk pengantin (di hari yang sama)\n    Bando melati segar buat ibu dan ibu besan (di hari yang sama)\n\n', '\n\n    Pelaminan rumah 3-6 meter\n    panggung (t=40 cm) + karpet panggung\n    Sofa Pelaminan + 4 Kursi Ortu\n    Penjor dan pregola (pintu masuk)\n    Taman depan pelaminan\n    Standing flower (bunga hidup) + Lampu Sorot\n    Janur kembar mayang (4 unit)\n    Tombang Pundi Uang (2 unit)\n\n', '\n\n    Foto 3 roll + Soft File\n    Cetak 108 lembar 4R album magnetic large\n    Video HD liputan akad-resepsi\n\n', '', '\n\nProsesi Temu Panggih (MC, Kru Temu, SDP)\n\nFree 2 Kru Support Acara\n', '7250000', 'paket-03.jpg', 1),
 (4, 'Paket Rumah Krisan', '', '\n\n    Rias akad nikah dan temu\n    Rias resepsi\n    Busana pengantin (3 pasang) – dipinjamkan\n    Rias dan busana ibu pengantin dan ibu besan (2 orang)\n    Rias dan busana untuk among tamu (2 orang)\n    Rias dan busana untuk pagar ayu (2 orang)\n    Busana beskap untuk bapak dan bapak besan (2 orang)\n    Busana beskap untuk pagar bagus (2 orang)\n    Ronce melati segar lengkap untuk pengantin (di hari yang sama)\n    Bando melati segar buat ibu dan ibu besan (di hari yang sama)\n\n', '\n\n    Pelaminan rumah 3-6 meter\n    panggung (t=40 cm) + karpet panggung\n    Sofa Pelaminan + 4 Kursi Ortu\n    Penjor dan pregola (pintu masuk)\n    Taman depan pelaminan\n    Standing flower (bunga hidup) + Lampu Sorot\n    Janur kembar mayang (4 unit)\n    Tombang Pundi Uang (2 unit)\n    FREE HAND BUCKET FRESH FLOWER\n\n', '', 'Tenda Semi VIP ukuran (4×6 m) 3 unit + Lampu\n\nKursi Tamu + Cover (100 unit)\n\nMeja + Cover ukuran (60×120 cm) 7 unit', '\n\n    Prosesi Temu Panggih (MC, Kru Temu, SDP)\n    Free : 2 Kru Support Acara\n\n', '3500000', 'paket-01.jpg', 1),
 (5, 'Paket Rumah Dahlia', '', '\n\n    Rias akad nikah dan temu\n    Rias resepsi\n    Busana pengantin (3 pasang) – dipinjamkan\n    Rias dan busana ibu pengantin dan ibu besan (2 orang)\n    Rias dan busana untuk among tamu (2 orang)\n    Rias dan busana untuk pagar ayu (2 orang)\n    Busana beskap untuk bapak dan bapak besan (2 orang)\n    Busana beskap untuk pagar bagus (2 orang)\n    Ronce melati segar lengkap untuk pengantin (di hari yang sama)\n    Bando melati segar buat ibu dan ibu besan (di hari yang sama)\n\n', '\n\n    Pelaminan rumah 3-6 meter\n    panggung 40 cm + karpet panggung\n    Sofa Pelaminan + 4 Kursi Ortu\n    Penjor dan pregola (pintu masuk)\n    Taman depan pelaminan\n    Standing flower (bunga hidup)\n    Janur kembar mayang (4 unit)\n    Tombang (2 unit) — dipinjamkan\n\n', 'Foto 3 roll + Soft File\n\nCetak 108 lembar 4R album magnetic large\n\nvideo HD Liputan akad sampai dengan resepsi', 'Tenda Semi VIP ukuran (4×6 m) 3 unit + Lampu\n\nKursi Tamu + Cover (100 unit)\n\nMeja + Cover ukuran (60×120 cm) 7 unit', 'Prosesi Temu Panggih (MC, Kru Temu, SDP)\nFree : 2 kru support acara', '3500000', 'paket-01.jpg', 1),
-(6, 'Paket Rumah Lavender', '', '\n\n    Rias akad nikah dan temu\n    Rias resepsi\n    Busana pengantin (3 pasang) – dipinjamkan\n    Rias dan busana ibu pengantin dan ibu besan (2 orang)\n    Rias dan busana untuk among tamu (2 orang)\n    Rias dan busana untuk pagar ayu (2 orang)\n    Busana beskap untuk bapak dan bapak besan (2 orang)\n    Busana beskap untuk pagar bagus (2 orang)\n    Ronce melati segar lengkap untuk pengantin (di hari yang sama)\n    Bando melati segar buat ibu dan ibu besan (di hari yang sama)\n\n', '\n\n    Pelaminan rumah 3-6 meter\n    panggung (t=40 cm) + karpet panggung\n    Sofa Pelaminan + 4 Kursi Ortu\n    Penjor dan pregola (pintu masuk)\n    Taman depan pelaminan\n    Standing flower (bunga hidup) + Lampu Sorot\n    Janur kembar mayang (4 unit)\n    Tombang Pundi Uang (2 unit)\n    Free : Hand Bucker Fresh Flower\n\n', '\n\n    Foto Unlimited + 120 cetak 4R album magnetic large\n    Soft file diberikan semua\n    Video HD liputan akad-resepsi\n\n', '\n\n    Tenda VIP ukuran 4×6 meter (1 unit) + Lampu Hias\n    Tenda Semi VIP ukuran 4×6 meter (2 unit) + Lampu\n    Tirai 12 Meter (untuk tenda pelaminan)\n    Kursi tamu dan cover (100 unit)\n    Meja + Cover ukuran (60×120 cm) 7 unit\n    Free : 1 Kipas Angin Besar 30”\n\n', '\n\n    Prosesi Temu Panggih (MC, Kru Temu, SDP)\n    Electon (1 Player, 1 Singer)\n    Free : 2 Kru Support Acara\n\n', '18000000', 'paket-01.jpg', 1),
+(6, 'Paket Rumah Lavender', '', '\n\n    Rias akad nikah dan temu\n    Rias resepsi\n    Busana pengantin (3 pasang) – dipinjamkan\n    Rias dan busana ibu pengantin dan ibu besan (2 orang)\n    Rias dan busana untuk among tamu (2 orang)\n    Rias dan busana untuk pagar ayu (2 orang)\n    Busana beskap untuk bapak dan bapak besan (2 orang)\n    Busana beskap untuk pagar bagus (2 orang)\n    Ronce melati segar lengkap untuk pengantin (di hari yang sama)\n    Bando melati segar buat ibu dan ibu besan (di hari yang sama)\n\n', '\n\n    Pelaminan rumah 3-6 meter\n    panggung (t=40 cm) + karpet panggung\n    Sofa Pelaminan + 4 Kursi Ortu\n    Penjor dan pregola (pintu masuk)\n    Taman depan pelaminan\n    Standing flower (bunga hidup) + Lampu Sorot\n    Janur kembar mayang (4 unit)\n    Tombang Pundi Uang (2 unit)\n    Free : Hand Bucker Fresh Flower\n\n', '\n\n    Foto Unlimited + 120 cetak 4R album magnetic large\n    Soft file diberikan semua\n    Video HD liputan akad-resepsi\n\n', '\n\n    Tenda VIP ukuran 4×6 meter (1 unit) + Lampu Hias\n    Tenda Semi VIP ukuran 4×6 meter (2 unit) + Lampu\n    Tirai 12 Meter (untuk tenda pelaminan)\n    Kursi tamu dan cover (100 unit)\n    Meja + Cover ukuran (60×120 cm) 7 unit\n    Free : 1 Kipas Angin Besar 30”\n\n', '\n\n    Prosesi Temu Panggih (MC, Kru Temu, SDP)\n    Electon (1 Player, 1 Singer)\n    Free : 2 Kru Support Acara\n\n', '3500000', 'paket-01.jpg', 1),
 (7, 'Paket Rumah VIP', '', '\n\n    Rias akad nikah dan temu\n    Rias resepsi\n    Busana pengantin (3 pasang) – dipinjamkan\n    Rias dan busana ibu pengantin dan ibu besan (2 orang)\n    Rias dan busana untuk among tamu (2 orang)\n    Rias dan busana untuk pagar ayu (2 orang)\n    Busana beskap untuk bapak dan bapak besan (2 orang)\n    Busana beskap untuk pagar bagus (2 orang)\n    Ronce melati segar lengkap untuk pengantin (di hari yang sama)\n    Bando melati segar buat ibu dan ibu besan (di hari yang sama)\n\n', '\n\n    Pelaminan rumah 3-6 meter\n    panggung (t=40 cm) + karpet panggung\n    Sofa Pelaminan + 4 Kursi Ortu\n    Penjor dan pregola (pintu masuk)\n    Taman depan pelaminan\n    Standing flower (bunga hidup) + Lampu Sorot\n    Janur kembar mayang (4 unit)\n    Tombang Pundi Uang (2 unit)\n    Free : Hand Bucker Fresh Flower\n\n', '\n\n    Foto Unlimited + 120 cetak 4R album magnetic large\n    Soft file diberikan semua\n    Video HD liputan akad-resepsi\n    Video Cinematic akad-resepsi\n    Free : Paket Foto Pre Wedding By @studiophotokhaela 5 tema\n\n', '\n\n    Tenda VIP ukuran 4×6 meter (3 unit) + 1 Lampu Hias + 2 Lampu Mercury\n    Tirai 36 Meter + Karpet 3 Plong + 3 Kipas Angin 30”\n    Kursi tamu dan cover (100 unit)\n    Meja + Cover ukuran (60×120 cm) 7 unit\n\n', '\n\n    Prosesi Temu Panggih (MC, Kru Temu, SDP)\n    Cucuk Lampah\n    Electon (1 Player, 1 Singer)\n    Free : 2 Kru Support Acara\n\n', '3500000', 'paket-01.jpg', 1);
 
 -- --------------------------------------------------------
@@ -274,10 +271,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
 (5, 'user', 'user@gmail.com', 'default.jpg', '$2y$10$9ngFbcmx4MjrSU0MKbxP5OLoEMD2WTsSWfoqEg0NhvQe5FYE2hDli', 2, 1, 1618705909),
 (7, 'adminS', 'admin@gmail.com', 'lvl.jpg', '$2y$10$MKxEybip5n.QGWWNRus54e98yw9VqWQmWSjwZhcdfZFgyqeHLDWOi', 1, 1, 1618712717),
-(8, 'user', 'user1@gmail.com', 'default.jpg', '$2y$10$YK330rKhCP0AcwmolPJfDu76mMcFnUneOo2L8SLs3FDCfZPhnHp7G', 2, 1, 1619151004),
-(9, 'ulum admin', 'ulumadmin@gmail.com', 'default.jpg', '$2y$10$QjM561hYpzYq5Tlg/K5cVOCbxZlljwAATwprtSrL7V2sdvwHFWHPm', 1, 1, 1623473770),
-(10, 'zulfis', 'zulfis@gmail.com', 'default.jpg', '$2y$10$xbETbVv0j1tpG/6NWYyDcOMW7t6E9JuNtBvg6OovyB93Es/.EfTf6', 1, 1, 1623474709),
-(11, 'karina', 'karina@gmail.com', 'default.jpg', '$2y$10$4bIgv38kE1iZb2b4TF7QGe69esgsMknlP5zyDivWWtmD4Mqd74kfC', 2, 1, 1623474767);
+(8, 'user', 'user1@gmail.com', 'default.jpg', '$2y$10$YK330rKhCP0AcwmolPJfDu76mMcFnUneOo2L8SLs3FDCfZPhnHp7G', 2, 1, 1619151004);
 
 -- --------------------------------------------------------
 
@@ -368,12 +362,11 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (3, 2, 'Edit Profile', 'user/edit', 'fas fa-fw fa-user-edit', 1),
 (4, 3, 'Menu Management', 'menu', 'fas fa-fw fa-folder', 1),
 (8, 7, 'Paket', 'wedding', 'fas fa-list-alt', 1),
+(10, 2, 'Paket', 'user/paket', 'fas fa-list-alt', 1),
 (11, 1, 'Role', 'admin/role', 'fas fa-fw fa-user-tie', 1),
 (13, 1, 'Transaksi', 'admin/transaksi', 'fas fa-fw fa-user-tie', 1),
 (14, 3, 'sub Menu Management', 'menu/submenu', 'fas fa-fw fa-folder-open', 1),
-(21, 1, 'Detail Paket', 'admin/paket', 'fas fa-list-alt', 1),
-(25, 4, 'Pemesanan', 'pemesanan', 'fas fa-list-alt', 1),
-(26, 1, 'Data Karyawan', 'admin/karyawan', 'fas fa-list-alt', 1);
+(18, 4, 'Pemesanan Paket', 'pemesanan', 'fas fa-fw fa-folder', 1);
 
 -- --------------------------------------------------------
 
@@ -517,37 +510,37 @@ ALTER TABLE `paket`
 -- AUTO_INCREMENT untuk tabel `tbl_detail_order`
 --
 ALTER TABLE `tbl_detail_order`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_kategori`
 --
 ALTER TABLE `tbl_kategori`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_pelanggan`
 --
 ALTER TABLE `tbl_pelanggan`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_produk`
 --
 ALTER TABLE `tbl_produk`
-  MODIFY `id_produk` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_produk` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_access_menu`
@@ -571,7 +564,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT untuk tabel `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `vendor`
