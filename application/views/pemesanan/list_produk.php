@@ -7,10 +7,10 @@
 </div>
 
 <div class="col-lg-3">
-
-
-
+  <br>
+  <br>
   <div class="list-group">
+
     <a href="<?php echo base_url() ?>shopping/tampil_cart" class="list-group-item"><strong><i class="glyphicon glyphicon-shopping-cart"></i> KERANJANG BELANJA</strong></a>
     <?php
 
@@ -36,6 +36,8 @@
     ?>
   </div>
 </div>
+<br>
+<br>
 <div class="row">
   <?php
   foreach ($produk as $row) {

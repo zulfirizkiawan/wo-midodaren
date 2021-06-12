@@ -9,7 +9,7 @@ class Midodaren extends CI_Controller
 		$this->load->library('cart');
 		$this->load->model('keranjang_model');
 	}
-
+ 
     public function index()
     {
         $data['judul'] = 'Home';
