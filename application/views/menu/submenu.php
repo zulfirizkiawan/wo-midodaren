@@ -39,7 +39,7 @@
                             <td><?= $sm['is_active'] ?></td>
                             <td>
                                 <a href="<?= base_url('menu/editsub/' . $sm['id']) ?>" class="badge badge-success">Edit</a>
-                                <a href="<?= base_url('menu/deletesub/' . $sm['id']) ?>" class="badge badge-danger" data-toggle="modal" data-target="#deleteSubmenu">Delete</a>
+                                <a href="<?= base_url('menu/deletesub/' . $sm['id']) ?>" class="badge badge-danger" data-toggle="modal" data-target="#deleteSubmenu-<?= $i; ?>">Delete</a>
                             </td>
                         </tr>
                         <?php $i++; ?>
@@ -102,7 +102,10 @@
     </div>
 </div>
 
-<div class="modal fade" id="deleteSubmenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<?php
+$i = 1;
+foreach ($subMenu as $sm) : ?>
+<div class="modal fade" id="deleteSubmenu-<?= $i; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -119,3 +122,5 @@
         </div>
     </div>
 </div>
+<?php $i++; ?>
+<?php endforeach; ?>
