@@ -39,12 +39,13 @@ function check_access($role_id, $menu_id)
     }
 }
 
-// function active_check($is_active, $submenu_id)
-// {
-//     $CI = get_instance();
-//     $CI->db->where('is_active', $is_active);
-//     $CI->db->where('id', $submenu_id);
-//     $result = $CI->db->get('user_sub_menu');
-//     if ($result->num_rows() > 0) {
-//         return "checked='checked'";
-//     }
+function active_check($is_active, $submenu_id)
+{
+    $CI = get_instance();
+    $CI->db->where('is_active', $is_active);
+    $CI->db->where('id', $submenu_id);
+    $result = $CI->db->get('user_sub_menu');
+    if ($result->num_rows() > 0) {
+        return "checked='checked'";
+    }
+}

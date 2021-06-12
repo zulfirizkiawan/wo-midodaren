@@ -20,7 +20,7 @@ class Admin_model extends CI_Model
         return $this->db->get('user')->result_array();
     }
 
-    public  function pesanan()
+    public function pesanan()
 	{
 		$this->db->select('tbl_detail_order.id,
         tbl_produk.nama_produk,
@@ -35,17 +35,17 @@ class Admin_model extends CI_Model
         $querys = $this->db->get();
         return $querys;
     }	
-    // public function pesanan()
-    // {
-    //     $queryMenu = "SELECT tbl_detail_order.id, tbl_produk.nama_produk, tbl_pelanggan.nama, tbl_pelanggan.telp, tbl_order.tanggal, tbl_detail_order.harga FROM tbl_detail_order JOIN tbl_produk ON tbl_detail_order.produk=tbl_produk.id_produk JOIN tbl_order ON tbl_detail_order.order_id=tbl_order.id JOIN tbl_pelanggan ON tbl_order.pelanggan=tbl_pelanggan.id ";
-        // return $this->db->query($queryMenu)->result_array();
-    // }
 
-    // public function getSubMenu()
-    // {
-    //     $query = "SELECT tbl_kategori.nama_kategori FROM tbl_kategori WHERE tbl_kategori.id";
-    //     return $this->db->query($query)->result_array();
-    // }
+    public function karyawans()
+	{
+		$this->db->select('*');
+        $this->db->from('user');
+        $this->db->where('role_id', 1);
+        
+        return $this->db->get();
+    }
+
+   
 
     function jumlah_transaksi()
     {
@@ -58,11 +58,12 @@ class Admin_model extends CI_Model
     function jumlah_customer()
     {
         $this->db->select('*');
-        $this->db->from('data_pegawai');
-        $this->db->where('hak_akses', 2);
+        $this->db->from('user');
+        $this->db->where('role_id', 2);
         
         return $this->db->get()->num_rows();
     }
+
 
 }
 
