@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin_model extends CI_Model
-{
+{ 
     public function getUserRoleById($role_id)
     {
         return $this->db->get_where('user_role', ['id' => $role_id])->row_array();
@@ -47,6 +47,22 @@ class Admin_model extends CI_Model
     //     return $this->db->query($query)->result_array();
     // }
 
+    function jumlah_transaksi()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_detail_order');
+        
+        return $this->db->get()->num_rows();
+    }
     
+    function jumlah_customer()
+    {
+        $this->db->select('*');
+        $this->db->from('data_pegawai');
+        $this->db->where('hak_akses', 2);
+        
+        return $this->db->get()->num_rows();
+    }
+
 }
 

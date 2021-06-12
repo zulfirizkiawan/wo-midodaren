@@ -16,10 +16,11 @@ class Admin extends CI_Controller
         $data['title'] = 'Dashboard';
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
-        // echo 'selamat datang ' . $data['user']['name'];
         
-        // $data['pesanan'] = $this->db->get('tbl_detail_order')->result_array();
-        //  $this->form_validation->set_rules('index', 'Admin', 'required');
+        $data['jumlah_transaksi'] = $this->Admin_model->jumlah_transaksi();
+        $data['jumlah_customer'] = $this->Admin_model->jumlah_customer();
+        // $data['jumlah_paket_rumah'] = $this->Admin_model->jumlah_paket_rumah();
+        // $data['jumlah_paket_hotel'] = $this->Admin_model->jumlah_paket_hotel();
 
         $this->load->view('templates/header_ad', $data);
         $this->load->view('templates/sidebar_ad', $data);
