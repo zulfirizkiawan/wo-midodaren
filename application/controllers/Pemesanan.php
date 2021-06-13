@@ -174,5 +174,22 @@ class Pemesanan extends CI_Controller {
 		$this->load->view('pemesanan/sukses',$data);
 		$this->load->view('templates/footer_ad');
 	}
+
+	public function pembayaran()
+	{
+		$data['title'] = 'Pembayaran';
+		$data['user'] = $this->db->get_where('user', ['email' =>
+		$this->session->userdata('email')])->row_array();
+
+		$this->load->view('templates/header_ad', $data);
+        $this->load->view('templates/sidebar_ad', $data);
+        $this->load->view('templates/topbar_ad', $data);
+		$this->load->view('pemesanan/pembayaran',$data);
+		$this->load->view('templates/footer_ad');
+	}
+
 }
 ?>
+
+	
+
