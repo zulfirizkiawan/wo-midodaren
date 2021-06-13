@@ -5,45 +5,38 @@
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
 
-
     <div class="row">
-        
-            <?= form_error('user', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
-
-            <?= $this->session->flashdata('message') ?>
-
+    <div class="col-lg">
+            <?php if (validation_errors()) : ?>
+                <div class="alert alert-danger" role="alert">
+                    <?= validation_errors(); ?>
+                </div>
+            <?php endif; ?>
+            <?= $this->session->flashdata('message'); ?>
             <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModal">Add New paket</a>
-
-            <table class="table">
+            <table class="table table-hover">
                 <thead>
                     <tr>
                         <th >#</th>
-                        <th >nama paket</th>
-                        <th >deskripsi</th>
-                        
+                        <th >nama paket</th>                                    
                         <th >rias_busana</th>
                         <th >dekorasi_pelaminan</th>
                         <th >dokumentasi</th>
                         <th >dekorasi_tenda</th>
                         <th >support_acara</th>
-
                         <th >harga</th>
                         <th >gambar</th>
-
-                        
-
-                        
                         <th >Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $i = 1; ?>
-                    <?php foreach ($userp as $m) : ?>
+                    <?php $i = 1;
+                    foreach ($paket as $m) : ?>
                         <tr>
                             <th scope="row"><?= $i ?></th>
                             
                             <td><?= $m['nama_produk']; ?></td>
-                            <td><?= $m['deskripsi']; ?></td>
+                            
 
                             <td><?= $m['rias_busana']; ?></td>
                             <td><?= $m['dekorasi_pelaminan']; ?></td>
@@ -55,8 +48,8 @@
                             <td><?= $m['gambar']; ?></td>
 
                             <td>
-                                <a href="" class="badge badge-pill badge-success">edit</a>
-                                <a href="" class="badge badge-pill badge-danger">delete</a>
+                            
+                                <a href="" class="badge badge-danger" data-toggle="modal" data-target="#deleteSubmenu">Delete</a>
                             </td>
                         </tr>
                         <?php $i++; ?>
@@ -108,7 +101,7 @@
                     </div>
                     <!-- dekorasi_pelaminan	 -->
                     <div class="form-group">
-                        <textarea class="form-control" id="dekorasi_pelaminan	" name="dekorasi_pelaminan	" placeholder="dekorasi_pelaminan"></textarea>
+                        <textarea class="form-control" id="dekorasi_pelaminan" name="dekorasi_pelaminan" placeholder="dekorasi_pelaminan"></textarea>
                     </div>
                     <!-- dokumentasi	 -->
                     <div class="form-group">
@@ -127,14 +120,14 @@
                         <input type="text" class="form-control" id="harga" name="harga" placeholder="harga">
                     </div>
 
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Add </button>
+                    <button type="submit" class="btn btn-primary">Add Submenu</button>
                 </div>
             </form>
         </div>
     </div>
+</div>
 </div>
 </div>
