@@ -40,8 +40,16 @@ class Admin extends CI_Controller
         // echo 'selamat datang ' . $data['user']['name'];
 
         $data['userp'] = $this->db->get('tbl_produk')->result_array();
+        $data['produk'] = $this->db->get('tbl_kategori')->result_array();
 
-        $this->form_validation->set_rules('paket', 'User', 'required');
+        $this->form_validation->set_rules('nama_produk', 'nama_produk', 'required');
+        $this->form_validation->set_rules('rias_busana', 'rias_busana', 'required');
+        $this->form_validation->set_rules('dekorasi_pelaminan', 'dekorasi_pelaminan', 'required');
+        $this->form_validation->set_rules('dokumentasi', 'dokumentasi', 'required');
+        $this->form_validation->set_rules('dekorasi_tenda', 'dekorasi_tenda', 'required');
+        $this->form_validation->set_rules('support_acara', 'support_acara', 'required');
+        $this->form_validation->set_rules('harga', 'harga', 'required');
+        $this->form_validation->set_rules('kategori', 'kategori', 'required');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header_ad', $data);
@@ -50,8 +58,19 @@ class Admin extends CI_Controller
             $this->load->view('admin/paket', $data);
             $this->load->view('templates/footer_ad',);
         } else {
-            $this->db->insert('tbl_paket', ['userp' => $this->input->post('paket')]);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> New Menu Added! </div>');
+            $data = [
+                'nama_produk' => $this->input->post('nama_produk'),
+                'rias_busana' => $this->input->post('rias_busana'),
+                'dekorasi_pelaminan' => $this->input->post('dekorasi_pelaminan'),
+                'dokumentasi' => $this->input->post('dokumentasi'),
+                'dekorasi_tenda' => $this->input->post('dekorasi_tenda'),
+                'support_acara' => $this->input->post('support_acara'),
+                'harga' => $this->input->post('harga'),
+                'kategori' => $this->input->post('kategori')
+            ];
+
+            $this->db->insert('tbl_produk', $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">New Submenu added!</div>');
             redirect('admin/paket');
         }
     }

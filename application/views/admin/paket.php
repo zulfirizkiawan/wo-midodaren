@@ -53,10 +53,7 @@
                             
                             <td><?= $m['harga']; ?></td>
                             <td><?= $m['gambar']; ?></td>
-                            
-                            	
-                        
-                            
+
                             <td>
                                 <a href="" class="badge badge-pill badge-success">edit</a>
                                 <a href="" class="badge badge-pill badge-danger">delete</a>
@@ -93,10 +90,10 @@
                     </div>
 
                     <div class="form-group">
-                        <select name="menu_id" id="menu_id" class="form-control">
-                            <option value="">Select Menu</option>
-                            <?php foreach ($menu as $m) : ?>
-                                <option value="<?= $m['id']; ?>"><?= $m['menu']; ?></option>
+                        <select name="kategori" id="kategori" class="form-control">
+                            <option value="">Select Kategori</option>
+                            <?php foreach ($produk as $m) : ?>
+                                <option value="<?= $m['id']; ?>"><?= $m['nama_kategori']; ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
