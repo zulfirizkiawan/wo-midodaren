@@ -8,9 +8,10 @@ class Admin extends CI_Controller
         parent::__construct();
         is_logged_in();
         $this->load->model('Admin_model');
+        $this->load->model('Keranjang_model');
     }
 
-
+ 
     public function index()
     {
         $data['title'] = 'Dashboard';
@@ -19,6 +20,8 @@ class Admin extends CI_Controller
         
         $data['jumlah_transaksi'] = $this->Admin_model->jumlah_transaksi();
         $data['jumlah_customer'] = $this->Admin_model->jumlah_customer();
+        $data['paket_rumah'] = $this->Admin_model->paket_rumah();
+        $data['paket_hotel'] = $this->Admin_model->paket_hotel();
         // $data['jumlah_paket_rumah'] = $this->Admin_model->jumlah_paket_rumah();
         // $data['jumlah_paket_hotel'] = $this->Admin_model->jumlah_paket_hotel();
 
@@ -52,6 +55,64 @@ class Admin extends CI_Controller
             redirect('admin/paket');
         }
     }
+
+    public function data_paket()
+    {
+
+		$data['title'] = 'Data Paket';
+		$data['user'] = $this->db->get_where('user', ['email' =>
+		$this->session->userdata('email')])->row_array();
+		// echo 'selamat datang ' . $data['user']['name'];
+
+		$kategori=($this->uri->segment(3))?$this->uri->segment(3):0;
+		$data['produk'] = $this->Keranjang_model->get_produk_kategori($kategori);
+		// $data['kategori'] = $this->keranjang_model->get_kategori_all();
+  
+		// $data['menu'] = $this->db->get('Pemesanan')->result_array();
+  
+		// $this->form_validation->set_rules('menu', 'Menu', 'required');
+  
+		if ($this->form_validation->run() == false) {
+		   $this->load->view('templates/header_ad', $data);
+		   $this->load->view('templates/sidebar_ad', $data);
+		   $this->load->view('templates/topbar_ad', $data);
+		   $this->load->view('admin/data_paket',$data);
+		   $this->load->view('templates/footer_ad');
+		} else {
+		   $this->db->insert('user_menu', ['menu' => $this->input->post('menu')]);
+		   $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> New Menu Added! </div>');
+		   redirect('admin/data_paket');
+		}
+	 }
+
+     public function tambah_data_paket()
+     {
+ 
+         $data['title'] = 'Data Paket';
+         $data['user'] = $this->db->get_where('user', ['email' =>
+         $this->session->userdata('email')])->row_array();
+         // echo 'selamat datang ' . $data['user']['name'];
+ 
+        //  $kategori=($this->uri->segment(3))?$this->uri->segment(3):0;
+        //  $data['produk'] = $this->Keranjang_model->get_produk_kategori($kategori);
+         // $data['kategori'] = $this->keranjang_model->get_kategori_all();
+   
+         // $data['menu'] = $this->db->get('Pemesanan')->result_array();
+   
+         // $this->form_validation->set_rules('menu', 'Menu', 'required');
+   
+        //  if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header_ad', $data);
+            $this->load->view('templates/sidebar_ad', $data);
+            $this->load->view('templates/topbar_ad', $data);
+            $this->load->view('admin/tambah_data_paket',$data);
+            $this->load->view('templates/footer_ad');
+        //  } else {
+            // $this->db->insert('user_menu', ['menu' => $this->input->post('menu')]);
+            // $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> New Menu Added! </div>');
+            // redirect('pemesanan');
+        //  }       
+      }
 
     public function transaksi()
     {
@@ -107,7 +168,7 @@ class Admin extends CI_Controller
             $data = [
                 'name' => htmlspecialchars($this->input->post('name', true)),
                 'email' => htmlspecialchars($this->input->post('email', true)),
-                'image' => 'default.jpg',
+                'gambar' => 'default.jpg',
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
                 'role_id' => 1,
                 'is_active' => 1,
@@ -216,42 +277,9 @@ class Admin extends CI_Controller
         redirect('admin/role');
     }
 
-    public function submenu()
-   {
+    
+    }
 
-      $data['title'] = 'Submenu Management';
-      $data['user'] = $this->db->get_where('user', ['email' =>
-      $this->session->userdata('email')])->row_array();
 
-      //Alias
-    //   $this->load->model('Admin_model');
-    //   $data['subMenu'] = $this->admin->getSubMenu();
-      // $data['subMenu'] = $this->db->get('user_sub_menu')->result_array();
-      $data['kategori'] = $this->db->get('tbl_kategori')->result_array();
+  
 
-    //   $this->form_validation->set_rules('title', 'Title', 'required');
-    //   $this->form_validation->set_rules('menu_id', 'Menu', 'required');
-    //   $this->form_validation->set_rules('url', 'URL', 'required');
-    //   $this->form_validation->set_rules('icon', 'icon', 'required');
-
-    //   if ($this->form_validation->run() == false) {
-         $this->load->view('templates/header_ad', $data);
-         $this->load->view('templates/sidebar_ad', $data);
-         $this->load->view('templates/topbar_ad', $data);
-         $this->load->view('admin/paket', $data);
-         $this->load->view('templates/footer_ad');
-    //   } else {
-    //      $data = [
-    //         'title' => $this->input->post('title'),
-    //         'menu_id' => $this->input->post('menu_id'),
-    //         'url  ' => $this->input->post('url'),
-    //         'icon' => $this->input->post('icon'),
-    //         'is_active' => $this->input->post('is_active')
-    //      ];
-    //      $this->db->insert('user_sub_menu', $data);
-    //      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> New Submenu Added! </div>');
-    //      redirect('menu/submenu');
-    //   }
-   }
-
-}

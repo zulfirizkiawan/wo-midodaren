@@ -63,7 +63,39 @@ class Admin_model extends CI_Model
         
         return $this->db->get()->num_rows();
     }
+    
+    function paket_rumah()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_produk');
+        $this->db->where('kategori', 1);
+        
+        return $this->db->get()->num_rows();
+    }
 
+    function paket_hotel()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_produk');
+        $this->db->where('kategori', 2);
+        
+        return $this->db->get()->num_rows();
+    }
+
+    public function get_produk_kategori($kategori)
+	{
+		if($kategori>0)
+			{
+				$this->db->where('kategori',$kategori);
+			}
+		$query = $this->db->get('tbl_produk');
+		return $query->result_array();
+	}
+    
+    // public function create($data_products){
+    //     //Query INSERT INTO
+    //     $this->db->insert('tbl_produk', $data_products);
+    // }
 
 }
 

@@ -2,43 +2,23 @@
 <div class="container-fluid">
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Daftar Paket</h1>
-    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-shopping-cart fa-sm text-white-50"></i> Bayar</a>
+    
   </div>
 </div>
+
 
 <div class="col-lg-3">
-  <br>
-  <br>
+<!-- <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newTambahPaket"></a> -->
+<!-- <a href="tambah_data_paket"  class="btn btn-primary mb-3" >Tambah Paket</a> -->
   <div class="list-group">
-
-    <a href="<?php echo base_url() ?>pemesanan/tampil_cart" class="list-group-item"><strong><i class="glyphicon glyphicon-shopping-cart"></i> KERANJANG BELANJA</strong></a>
-    <?php
-
-    $cart = $this->cart->contents();
-
-    // If cart is empty, this will show below message.
-    if (empty($cart)) {
-    ?>
-      <a class="list-group-item">Keranjang Belanja Kosong</a>
-      <?php
-    } else {
-      $grand_total = 0;
-      foreach ($cart as $item) {
-        $grand_total += $item['subtotal'];
-      ?>
-        <a class="list-group-item"><?php echo $item['name']; ?> (<?php echo $item['qty']; ?> x <?php echo number_format($item['price'], 0, ",", "."); ?>)=<?php echo number_format($item['subtotal'], 0, ",", "."); ?></a>
-      <?php
-      }
-      ?>
-
-    <?php
-    }
-    ?>
+  
   </div>
 </div>
 <br>
 <br>
+
 <div class="row">
+
   <?php
   foreach ($produk as $row) {
   ?>
@@ -61,7 +41,7 @@
             <input type="hidden" name="harga" value="<?php echo $row['harga']; ?>" />
             <input type="hidden" name="gambar" value="<?php echo $row['gambar']; ?>" />
             <input type="hidden" name="qty" value="1" />
-            <button type="submit" class="btn btn-sm btn-success"><i class="glyphicon glyphicon-shopping-cart"></i> Beli</button>
+            <button type="submit" class="btn btn-sm btn-success"><i class="glyphicon glyphicon-shopping-cart"></i> Delete </button>
           </div>
         </form>
       </div>
