@@ -39,17 +39,17 @@ class Admin extends CI_Controller
         $this->session->userdata('email')])->row_array();
         // echo 'selamat datang ' . $data['user']['name'];
 
-        $data['userp'] = $this->db->get('tbl_produk')->result_array();
+        $data['paket'] = $this->db->get('tbl_produk')->result_array();
         $data['produk'] = $this->db->get('tbl_kategori')->result_array();
 
-        $this->form_validation->set_rules('nama_produk', 'nama_produk', 'required');
-        $this->form_validation->set_rules('rias_busana', 'rias_busana', 'required');
-        $this->form_validation->set_rules('dekorasi_pelaminan', 'dekorasi_pelaminan', 'required');
-        $this->form_validation->set_rules('dokumentasi', 'dokumentasi', 'required');
-        $this->form_validation->set_rules('dekorasi_tenda', 'dekorasi_tenda', 'required');
-        $this->form_validation->set_rules('support_acara', 'support_acara', 'required');
-        $this->form_validation->set_rules('harga', 'harga', 'required');
-        $this->form_validation->set_rules('kategori', 'kategori', 'required');
+        $this->form_validation->set_rules('nama_produk', 'nama_produk', 'required');                // 2
+        $this->form_validation->set_rules('rias_busana', 'rias_busana', 'required');                // 3
+        $this->form_validation->set_rules('dekorasi_pelaminan', 'dekorasi_pelaminan', 'required');  // 4
+        $this->form_validation->set_rules('dokumentasi', 'dokumentasi', 'required');                // 5
+        $this->form_validation->set_rules('dekorasi_tenda', 'dekorasi_tenda', 'required');          // 6
+        $this->form_validation->set_rules('support_acara', 'support_acara', 'required');            // 7
+        $this->form_validation->set_rules('harga', 'harga', 'required');                            // 8
+        $this->form_validation->set_rules('kategori', 'kategori', 'required');                       // 10
 
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header_ad', $data);
