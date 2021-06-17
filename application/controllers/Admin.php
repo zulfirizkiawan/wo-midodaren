@@ -56,7 +56,7 @@ class Admin extends CI_Controller
             $this->load->view('templates/sidebar_ad', $data);
             $this->load->view('templates/topbar_ad', $data);
             $this->load->view('admin/paket', $data);
-            $this->load->view('templates/footer_ad',);
+            $this->load->view('templates/footer_ad');
         } else {
             $data = [
                 'nama_produk' => $this->input->post('nama_produk'),
@@ -160,7 +160,7 @@ class Admin extends CI_Controller
         $this->load->view('templates/sidebar_ad', $data);
         $this->load->view('templates/topbar_ad', $data);
         $this->load->view('admin/karyawan', $data);
-        $this->load->view('templates/footer_ad',);
+        $this->load->view('templates/footer_ad');
     }
 
     public function regis()
