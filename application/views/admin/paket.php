@@ -75,7 +75,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('admin/paket/'); ?>" method="post"  enctype="multipart/form-​data">
+            <form action="<?= base_url('admin/tambah_paket'); ?>" method="post"  enctype="multipart/form-data">
            
                 <div class="modal-body">
 
