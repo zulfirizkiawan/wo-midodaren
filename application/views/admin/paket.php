@@ -6,7 +6,7 @@
 
 
     <div class="row">
-    <div class="col-lg">
+        <div class="col-lg">
             <?php if (validation_errors()) : ?>
                 <div class="alert alert-danger" role="alert">
                     <?= validation_errors(); ?>
@@ -17,16 +17,16 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th >#</th>
-                        <th >nama paket</th>                                    
-                        <th >rias_busana</th>
-                        <th >dekorasi_pelaminan</th>
-                        <th >dokumentasi</th>
-                        <th >dekorasi_tenda</th>
-                        <th >support_acara</th>
-                        <th >harga</th>
-                        <th >gambar</th>
-                        <th >Action</th>
+                        <th>#</th>
+                        <th>nama paket</th>
+                        <th>rias_busana</th>
+                        <th>dekorasi_pelaminan</th>
+                        <th>dokumentasi</th>
+                        <th>dekorasi_tenda</th>
+                        <th>support_acara</th>
+                        <th>harga</th>
+                        <th>gambar</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,21 +34,21 @@
                     foreach ($paket as $m) : ?>
                         <tr>
                             <th scope="row"><?= $i ?></th>
-                            
+
                             <td><?= $m['nama_produk']; ?></td>
-                            
+
 
                             <td><?= $m['rias_busana']; ?></td>
                             <td><?= $m['dekorasi_pelaminan']; ?></td>
                             <td><?= $m['dokumentasi']; ?></td>
                             <td><?= $m['dekorasi_tenda']; ?></td>
                             <td><?= $m['support_acara']; ?></td>
-                            
+
                             <td><?= $m['harga']; ?></td>
                             <td><?= $m['gambar']; ?></td>
 
                             <td>
-                            
+
                                 <a href="" class="badge badge-danger" data-toggle="modal" data-target="#deleteSubmenu">Delete</a>
                             </td>
                         </tr>
@@ -75,9 +75,10 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('admin/paket/'); ?>" method="post">
+            <form action="<?= base_url('admin/paket/'); ?>" method="post"  enctype="multipart/form-​data">
+           
                 <div class="modal-body">
-                               
+
                     <div class="form-group">
                         <input type="text" class="form-control" id="nama_produk" name="nama_produk" placeholder="nama_produk">
                     </div>
@@ -120,11 +121,16 @@
                         <input type="text" class="form-control" id="harga" name="harga" placeholder="harga">
                     </div>
 
+                    <!-- gambar	 -->
+                    <div class="form-group">
+                        <input type="file" class="form-control" id="gambar" name="gambar" placeholder="gambar">
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Add Submenu</button>
+                    <button type="submit" class="btn btn-primary">Add paket</button>
                 </div>
+               
             </form>
         </div>
     </div>
