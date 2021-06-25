@@ -11,13 +11,13 @@ class Admin extends CI_Controller
         $this->load->model('Keranjang_model');
     }
 
- 
+
     public function index()
     {
         $data['title'] = 'Dashboard';
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
-        
+
         $data['jumlah_transaksi'] = $this->Admin_model->jumlah_transaksi();
         $data['jumlah_customer'] = $this->Admin_model->jumlah_customer();
         $data['paket_rumah'] = $this->Admin_model->paket_rumah();
@@ -32,6 +32,89 @@ class Admin extends CI_Controller
         $this->load->view('templates/footer_ad');
     }
 
+    public function tambah_paket()
+    {
+        $this->form_validation->set_rules('nama_produk', 'nama_produk', 'required');                // 2
+        $this->form_validation->set_rules('rias_busana', 'rias_busana', 'required');                // 3
+        $this->form_validation->set_rules('dekorasi_pelaminan', 'dekorasi_pelaminan', 'required');  // 4
+        $this->form_validation->set_rules('dokumentasi', 'dokumentasi', 'required');                // 5
+        $this->form_validation->set_rules('dekorasi_tenda', 'dekorasi_tenda', 'required');          // 6
+        $this->form_validation->set_rules('support_acara', 'support_acara', 'required');            // 7
+        $this->form_validation->set_rules('harga', 'harga', 'required');                            // 8
+        $this->form_validation->set_rules('kategori', 'kategori', 'required');
+
+        if ($this->form_validation->run() == false) {
+
+            $data['title'] = 'paket';
+            $data['user'] = $this->db->get_where('user', ['email' =>
+            $this->session->userdata('email')])->row_array();
+            // echo 'selamat datang ' . $data['user']['name'];
+
+            $data['paket'] = $this->db->get('tbl_produk')->result_array();
+            $data['produk'] = $this->db->get('tbl_kategori')->result_array();
+
+            $this->load->view('templates/header_ad', $data);
+            $this->load->view('templates/sidebar_ad', $data);
+            $this->load->view('templates/topbar_ad', $data);
+            $this->load->view('admin/paket', $data);
+            $this->load->view('templates/footer_ad');
+            // $this->upload->do_upload('gambar');
+        } else {
+
+            // $config['upload_path']      = './assets/img/paket/'; // folder upload 
+            // $config['allowed_types']    = 'gif|jpg|png|jpeg'; // jenis file
+            // $config['max_width']        = 5120;
+            // $config['max_height']       = 5300;
+            // $config['max_size']         = '2048';
+            // // $this->upload->initialize($config);
+            // $this->load->library('upload', $config);                       // 10
+            $config['upload_path']      = './assets/img/paket/';
+            $config['allowed_types']    = 'gif|jpg|png|jpeg';
+            $config['max_width']        = 5120;
+            $config['max_height']       = 5300;
+            $config['max_size']         = 5300;
+            $this->upload->initialize($config);
+            $this->load->library('upload', $config);
+
+            $nama_produk = $this->input->post('nama_produk');
+            $kategori = $this->input->post('kategori');
+            $rias_busana = $this->input->post('rias_busana');
+            $dekorasi_pelaminan = $this->input->post('dekorasi_pelaminan');
+            $dokumentasi = $this->input->post('dokumentasi');
+            $dekorasi_tenda = $this->input->post('dekorasi_tenda');
+            $support_acara = $this->input->post('support_acara');
+            $harga = $this->input->post('harga');
+            // $gambar = $this->input->post('gambar');
+
+            if (!$this->upload->do_upload('gambar')) { //sesuai dengan name pada form 
+                // if (empty($_FILES['gambar']['name'])) {
+                $this->form_validation->set_rules('gambar', 'gambar', 'required');                            // 9
+                echo "gagal upload";
+            } else {
+
+                $file = $this->upload->data();
+                $gambar = $file['file_name'];
+
+                $data = [
+                    'nama_produk' => $nama_produk,
+                    'kategori' => $kategori,
+                    'rias_busana' => $rias_busana,
+                    'dekorasi_pelaminan' => $dekorasi_pelaminan,
+                    'dokumentasi' => $dokumentasi,
+                    'dekorasi_tenda' => $dekorasi_tenda,
+                    'support_acara' => $support_acara,
+                    'harga' => $harga,
+                    'gambar' => $gambar,
+                ];
+
+                $this->db->insert('tbl_produk', $data);
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">New Submenu added!</div>');
+                redirect('admin/paket');
+            }
+        }
+    }
+
+
     public function paket()
     {
         $data['title'] = 'paket';
@@ -41,119 +124,70 @@ class Admin extends CI_Controller
 
         $data['paket'] = $this->db->get('tbl_produk')->result_array();
         $data['produk'] = $this->db->get('tbl_kategori')->result_array();
-
-        $this->form_validation->set_rules('nama_produk', 'nama_produk', 'required');                // 2
-        // $this->form_validation->set_rules('rias_busana', 'rias_busana', 'required');                // 3
-        // $this->form_validation->set_rules('dekorasi_pelaminan', 'dekorasi_pelaminan', 'required');  // 4
-        // $this->form_validation->set_rules('dokumentasi', 'dokumentasi', 'required');                // 5
-        // $this->form_validation->set_rules('dekorasi_tenda', 'dekorasi_tenda', 'required');          // 6
-        // $this->form_validation->set_rules('support_acara', 'support_acara', 'required');            // 7
-        // $this->form_validation->set_rules('harga', 'harga', 'required');                            // 8
-        // $this->form_validation->set_rules('gambar', 'gambar', 'required');                            // 9
-        $this->form_validation->set_rules('kategori', 'kategori', 'required');
-        
-        
-        
-        $config['upload_path'] = './assets/img/paket/'; // folder upload 
-        $config['allowed_types'] = 'gif|jpg|png|jpeg'; // jenis file
-        $config['max_size']     = '2048';
-        // $this->upload->initialize($config);
-        $this->load->library('upload', $config);                       // 10
-        
-        if ($this->form_validation->run() == false) {
-            $this->load->view('templates/header_ad', $data);
-            $this->load->view('templates/sidebar_ad', $data);
-            $this->load->view('templates/topbar_ad', $data);
-            $this->load->view('admin/paket', $data);
-            $this->load->view('templates/footer_ad');
-            // $this->upload->do_upload('gambar');
-        } else {
-            
-            if (!$this->upload->do_upload('gambar')) //sesuai dengan name pada form 
-            {
-                echo 'anda gagal upload';
-            } else {
-                $file = $this->upload->data();
-            	$gambar = $file['file_name'];
-            $data = [
-                'nama_produk' => $this->input->post('nama_produk'),
-                'kategori' => $this->input->post('kategori'),
-                'rias_busana' => $this->input->post('rias_busana'),
-                'dekorasi_pelaminan' => $this->input->post('dekorasi_pelaminan'),
-                'dokumentasi' => $this->input->post('dokumentasi'),
-                'dekorasi_tenda' => $this->input->post('dekorasi_tenda'),
-                'support_acara' => $this->input->post('support_acara'),
-                'harga' => $this->input->post('harga'),
-
-                'gambar' => $gambar
-                
-            ];
-            
-
-            $this->db->insert('tbl_produk', $data);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">New Submenu added!</div>');
-            redirect('admin/paket');
-            }
-        }
+        $this->load->view('templates/header_ad', $data);
+        $this->load->view('templates/sidebar_ad', $data);
+        $this->load->view('templates/topbar_ad', $data);
+        $this->load->view('admin/paket', $data);
+        $this->load->view('templates/footer_ad');
     }
 
     public function data_paket()
     {
 
-		$data['title'] = 'Data Paket';
-		$data['user'] = $this->db->get_where('user', ['email' =>
-		$this->session->userdata('email')])->row_array();
-		// echo 'selamat datang ' . $data['user']['name'];
+        $data['title'] = 'Data Paket';
+        $data['user'] = $this->db->get_where('user', ['email' =>
+        $this->session->userdata('email')])->row_array();
+        // echo 'selamat datang ' . $data['user']['name'];
 
-		$kategori=($this->uri->segment(3))?$this->uri->segment(3):0;
-		$data['produk'] = $this->Keranjang_model->get_produk_kategori($kategori);
-		// $data['kategori'] = $this->keranjang_model->get_kategori_all();
-  
-		// $data['menu'] = $this->db->get('Pemesanan')->result_array();
-  
-		// $this->form_validation->set_rules('menu', 'Menu', 'required');
-  
-		if ($this->form_validation->run() == false) {
-		   $this->load->view('templates/header_ad', $data);
-		   $this->load->view('templates/sidebar_ad', $data);
-		   $this->load->view('templates/topbar_ad', $data);
-		   $this->load->view('admin/data_paket',$data);
-		   $this->load->view('templates/footer_ad');
-		} else {
-		   $this->db->insert('user_menu', ['menu' => $this->input->post('menu')]);
-		   $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> New Menu Added! </div>');
-		   redirect('admin/data_paket');
-		}
-	 }
+        $kategori = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $data['produk'] = $this->Keranjang_model->get_produk_kategori($kategori);
+        // $data['kategori'] = $this->keranjang_model->get_kategori_all();
 
-     public function tambah_data_paket()
-     {
- 
-         $data['title'] = 'Data Paket';
-         $data['user'] = $this->db->get_where('user', ['email' =>
-         $this->session->userdata('email')])->row_array();
-         // echo 'selamat datang ' . $data['user']['name'];
- 
-        //  $kategori=($this->uri->segment(3))?$this->uri->segment(3):0;
-        //  $data['produk'] = $this->Keranjang_model->get_produk_kategori($kategori);
-         // $data['kategori'] = $this->keranjang_model->get_kategori_all();
-   
-         // $data['menu'] = $this->db->get('Pemesanan')->result_array();
-   
-         // $this->form_validation->set_rules('menu', 'Menu', 'required');
-   
-        //  if ($this->form_validation->run() == false) {
+        // $data['menu'] = $this->db->get('Pemesanan')->result_array();
+
+        // $this->form_validation->set_rules('menu', 'Menu', 'required');
+
+        if ($this->form_validation->run() == false) {
             $this->load->view('templates/header_ad', $data);
             $this->load->view('templates/sidebar_ad', $data);
             $this->load->view('templates/topbar_ad', $data);
-            $this->load->view('admin/tambah_data_paket',$data);
+            $this->load->view('admin/data_paket', $data);
             $this->load->view('templates/footer_ad');
+        } else {
+            $this->db->insert('user_menu', ['menu' => $this->input->post('menu')]);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> New Menu Added! </div>');
+            redirect('admin/data_paket');
+        }
+    }
+
+    public function tambah_data_paket()
+    {
+
+        $data['title'] = 'Data Paket';
+        $data['user'] = $this->db->get_where('user', ['email' =>
+        $this->session->userdata('email')])->row_array();
+        // echo 'selamat datang ' . $data['user']['name'];
+
+        //  $kategori=($this->uri->segment(3))?$this->uri->segment(3):0;
+        //  $data['produk'] = $this->Keranjang_model->get_produk_kategori($kategori);
+        // $data['kategori'] = $this->keranjang_model->get_kategori_all();
+
+        // $data['menu'] = $this->db->get('Pemesanan')->result_array();
+
+        // $this->form_validation->set_rules('menu', 'Menu', 'required');
+
+        //  if ($this->form_validation->run() == false) {
+        $this->load->view('templates/header_ad', $data);
+        $this->load->view('templates/sidebar_ad', $data);
+        $this->load->view('templates/topbar_ad', $data);
+        $this->load->view('admin/tambah_data_paket', $data);
+        $this->load->view('templates/footer_ad');
         //  } else {
-            // $this->db->insert('user_menu', ['menu' => $this->input->post('menu')]);
-            // $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> New Menu Added! </div>');
-            // redirect('pemesanan');
+        // $this->db->insert('user_menu', ['menu' => $this->input->post('menu')]);
+        // $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> New Menu Added! </div>');
+        // redirect('pemesanan');
         //  }       
-      }
+    }
 
     public function transaksi()
     {
@@ -162,14 +196,13 @@ class Admin extends CI_Controller
         $this->session->userdata('email')])->row_array();
 
         $data['pesanans'] = $this->Admin_model->pesanan()->result_array();
-        
+
         $this->load->view('templates/header_ad', $data);
         $this->load->view('templates/sidebar_ad', $data);
         $this->load->view('templates/topbar_ad', $data);
         $this->load->view('admin/transaksi', $data);
-        
     }
-    
+
     public function karyawan()
     {
         $data['title'] = 'Data karyawan';
@@ -177,7 +210,7 @@ class Admin extends CI_Controller
         $this->session->userdata('email')])->row_array();
 
         $data['karyawans'] = $this->Admin_model->karyawans()->result_array();
-        
+
         $this->load->view('templates/header_ad', $data);
         $this->load->view('templates/sidebar_ad', $data);
         $this->load->view('templates/topbar_ad', $data);
@@ -187,7 +220,7 @@ class Admin extends CI_Controller
 
     public function regis()
     {
-                    
+
         $this->form_validation->set_rules('name', 'Name', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
             'is_unique' => 'This email has already registerd'
@@ -317,10 +350,4 @@ class Admin extends CI_Controller
         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $role['role'] . ' role is deleted!</div>');
         redirect('admin/role');
     }
-
-    
-    }
-
-
-  
-
+}
