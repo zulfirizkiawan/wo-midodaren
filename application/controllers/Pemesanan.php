@@ -48,7 +48,7 @@ class Pemesanan extends CI_Controller
 		$data['user'] = $this->db->get_where('user', ['email' =>
 		$this->session->userdata('email')])->row_array();
 
-		$data['kategori'] = $this->keranjang_model->get_kategori_all();
+		$data['kategori'] = $this->Keranjang_model->get_kategori_all();
 		$this->load->view('templates/header_ad', $data);
 		$this->load->view('templates/sidebar_ad', $data);
 		$this->load->view('templates/topbar_ad', $data);
@@ -273,6 +273,11 @@ class Pemesanan extends CI_Controller
 		$data['title'] = 'Bukti Pembayaran';
 		$data['user'] = $this->db->get_where('user', ['email' =>
 		$this->session->userdata('email')])->row_array();
+
+		// $this->keranjang_model->bukti_pembayaran($data['user']);
+		$data['mbukti'] = $this->keranjang_model->bukti_pembayaran($data['user'])->result_array();
+		
+		
 
 		$this->load->view('templates/header_ad', $data);
 		$this->load->view('templates/sidebar_ad', $data);

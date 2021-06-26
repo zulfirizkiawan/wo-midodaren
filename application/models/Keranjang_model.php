@@ -51,5 +51,16 @@ class Keranjang_model extends CI_Model {
 	{
 		$this->db->insert('tbl_detail_order', $data);
 	}
+
+	function bukti_pembayaran($user)
+    {
+		
+        $this->db->select('*', 'user.name');
+        $this->db->from('pembayaran');
+        $this->db->join('user', 'id=pembayaran.id_user');
+		$this->db->where('id_user', $user['id']);
+        // return $this->db->get()->num_rows();
+		return $this->db->get();
+    }
 }
 ?>
