@@ -8,7 +8,7 @@ class Pemesanan extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->library('cart');
-		$this->load->model('keranjang_model');
+		$this->load->model('Keranjang_model');
 	}
 
 	public function index()
@@ -20,8 +20,8 @@ class Pemesanan extends CI_Controller
 		// echo 'selamat datang ' . $data['user']['name'];
 
 		$kategori = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-		$data['produk'] = $this->keranjang_model->get_produk_kategori($kategori);
-		$data['kategori'] = $this->keranjang_model->get_kategori_all();
+		$data['produk'] = $this->Keranjang_model->get_produk_kategori($kategori);
+		$data['kategori'] = $this->Keranjang_model->get_kategori_all();
 
 		// $data['menu'] = $this->db->get('Pemesanan')->result_array();
 
@@ -62,7 +62,7 @@ class Pemesanan extends CI_Controller
 		$data['user'] = $this->db->get_where('user', ['email' =>
 		$this->session->userdata('email')])->row_array();
 
-		$data['kategori'] = $this->keranjang_model->get_kategori_all();
+		$data['kategori'] = $this->Keranjang_model->get_kategori_all();
 		$this->load->view('templates/header_ad', $data);
 		$this->load->view('templates/sidebar_ad', $data);
 		$this->load->view('templates/topbar_ad', $data);
@@ -77,8 +77,8 @@ class Pemesanan extends CI_Controller
 		$this->session->userdata('email')])->row_array();
 
 		$id = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-		$data['kategori'] = $this->keranjang_model->get_kategori_all();
-		$data['detail'] = $this->keranjang_model->get_produk_id($id)->row_array();
+		$data['kategori'] = $this->Keranjang_model->get_kategori_all();
+		$data['detail'] = $this->Keranjang_model->get_produk_id($id)->row_array();
 		$this->load->view('templates/header_ad', $data);
 		$this->load->view('templates/sidebar_ad', $data);
 		$this->load->view('templates/topbar_ad', $data);
@@ -152,13 +152,13 @@ class Pemesanan extends CI_Controller
 			'alamat' => $this->input->post('alamat'),
 			'telp' => $this->input->post('telp')
 		);
-		$id_pelanggan = $this->keranjang_model->tambah_pelanggan($data_pelanggan);
+		$id_pelanggan = $this->Keranjang_model->tambah_pelanggan($data_pelanggan);
 		//-------------------------Input data order------------------------------
 		$data_order = array(
 			'tanggal' => date('Y-m-d'),
 			'pelanggan' => $id_pelanggan
 		);
-		$id_order = $this->keranjang_model->tambah_order($data_order);
+		$id_order = $this->Keranjang_model->tambah_order($data_order);
 		//-------------------------Input data detail order-----------------------		
 		if ($cart = $this->cart->contents()) {
 			foreach ($cart as $item) {
@@ -168,12 +168,12 @@ class Pemesanan extends CI_Controller
 					'qty' => $item['qty'],
 					'harga' => $item['price']
 				);
-				$proses = $this->keranjang_model->tambah_detail_order($data_detail);
+				$proses = $this->Keranjang_model->tambah_detail_order($data_detail);
 			}
 		}
 		//-------------------------Hapus shopping cart--------------------------		
 		$this->cart->destroy();
-		$data['kategori'] = $this->keranjang_model->get_kategori_all();
+		$data['kategori'] = $this->Keranjang_model->get_kategori_all();
 		$this->load->view('templates/header_ad', $data);
 		$this->load->view('templates/sidebar_ad', $data);
 		$this->load->view('templates/topbar_ad', $data);
@@ -274,8 +274,8 @@ class Pemesanan extends CI_Controller
 		$data['user'] = $this->db->get_where('user', ['email' =>
 		$this->session->userdata('email')])->row_array();
 
-		// $this->keranjang_model->bukti_pembayaran($data['user']);
-		$data['mbukti'] = $this->keranjang_model->bukti_pembayaran($data['user'])->result_array();
+		// $this->Keranjang_model->bukti_pembayaran($data['user']);
+		$data['mbukti'] = $this->Keranjang_model->bukti_pembayaran($data['user'])->result_array();
 		
 		
 

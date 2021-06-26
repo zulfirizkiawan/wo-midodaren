@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Daftar Paket</h1>
-    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-shopping-cart fa-sm text-white-50"></i> Bayar</a>
+    <a href="<?php echo base_url() ?>pemesanan/tampil_cart" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-shopping-cart fa-sm text-white-50"></i> Bayar</a>
   </div>
 </div>
 

@@ -30,7 +30,7 @@
             <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
 
-                        <li><a href="<?php echo base_url() ?>pemesanan/tampil_cart"><i class="glyphicon glyphicon-shopping-cart"></i> bayar </a></li>
+                        
                     </ul>
                 </div>
 
