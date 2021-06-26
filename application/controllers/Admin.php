@@ -34,7 +34,6 @@ class Admin extends CI_Controller
 
     public function tambah_paket()
     {
-
         $this->form_validation->set_rules('nama_produk', 'nama_produk', 'required');                // 2
         $this->form_validation->set_rules('rias_busana', 'rias_busana', 'required');                // 3
         $this->form_validation->set_rules('dekorasi_pelaminan', 'dekorasi_pelaminan', 'required');  // 4
@@ -42,7 +41,6 @@ class Admin extends CI_Controller
         $this->form_validation->set_rules('dekorasi_tenda', 'dekorasi_tenda', 'required');          // 6
         $this->form_validation->set_rules('support_acara', 'support_acara', 'required');            // 7
         $this->form_validation->set_rules('harga', 'harga', 'required');                            // 8
-        // $this->form_validation->set_rules('gambar', 'gambar');                            // 9
         $this->form_validation->set_rules('kategori', 'kategori', 'required');
 
         if ($this->form_validation->run() == false) {
@@ -62,32 +60,51 @@ class Admin extends CI_Controller
             $this->load->view('templates/footer_ad');
         } else {
 
-            $config['upload_path'] = './assets/img/paket/'; // folder upload 
-            $config['allowed_types'] = 'gif|jpg|png|jpeg'; // jenis file
-            $config['max_size']     = '2048';
+            // $config['upload_path']      = './assets/img/paket/'; // folder upload 
+            // $config['allowed_types']    = 'gif|jpg|png|jpeg'; // jenis file
+            // $config['max_width']        = 5120;
+            // $config['max_height']       = 5300;
+            // $config['max_size']         = '2048';
+            // // $this->upload->initialize($config);
+            // $this->load->library('upload', $config);                       // 10
+            $config['upload_path']      = './assets/img/paket/';
+            $config['allowed_types']    = 'gif|jpg|png|jpeg';
+            $config['max_width']        = 5120;
+            $config['max_height']       = 5300;
+            $config['max_size']         = 5300;
             $this->upload->initialize($config);
             $this->load->library('upload', $config);
 
-            if (!$this->upload->do_upload('gambar')) //sesuai dengan name pada form 
-            {
-                echo 'anda gagal upload';
+            $nama_produk = $this->input->post('nama_produk');
+            $kategori = $this->input->post('kategori');
+            $rias_busana = $this->input->post('rias_busana');
+            $dekorasi_pelaminan = $this->input->post('dekorasi_pelaminan');
+            $dokumentasi = $this->input->post('dokumentasi');
+            $dekorasi_tenda = $this->input->post('dekorasi_tenda');
+            $support_acara = $this->input->post('support_acara');
+            $harga = $this->input->post('harga');
+            // $gambar = $this->input->post('gambar');
+
+            if (!$this->upload->do_upload('gambar')) { //sesuai dengan name pada form 
+                // if (empty($_FILES['gambar']['name'])) {
+                $this->form_validation->set_rules('gambar', 'gambar', 'required');                            // 9
+                echo "gagal upload";
             } else {
+
                 $file = $this->upload->data();
                 $gambar = $file['file_name'];
+
                 $data = [
-                    'nama_produk' => $this->input->post('nama_produk'),
-                    'kategori' => $this->input->post('kategori'),
-                    'rias_busana' => $this->input->post('rias_busana'),
-                    'dekorasi_pelaminan' => $this->input->post('dekorasi_pelaminan'),
-                    'dokumentasi' => $this->input->post('dokumentasi'),
-                    'dekorasi_tenda' => $this->input->post('dekorasi_tenda'),
-                    'support_acara' => $this->input->post('support_acara'),
-                    'harga' => $this->input->post('harga'),
-
-                    'gambar' => $gambar
-
+                    'nama_produk' => $nama_produk,
+                    'kategori' => $kategori,
+                    'rias_busana' => $rias_busana,
+                    'dekorasi_pelaminan' => $dekorasi_pelaminan,
+                    'dokumentasi' => $dokumentasi,
+                    'dekorasi_tenda' => $dekorasi_tenda,
+                    'support_acara' => $support_acara,
+                    'harga' => $harga,
+                    'gambar' => $gambar,
                 ];
-
 
                 $this->db->insert('tbl_produk', $data);
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">New Submenu added!</div>');
@@ -105,6 +122,23 @@ class Admin extends CI_Controller
         $data['paket'] = $this->db->get('tbl_produk')->result_array();
         $data['produk'] = $this->db->get('tbl_kategori')->result_array();
 
+        $this->load->view('templates/header_ad', $data);
+        $this->load->view('templates/sidebar_ad', $data);
+        $this->load->view('templates/topbar_ad', $data);
+        $this->load->view('admin/paket', $data);
+        $this->load->view('templates/footer_ad');
+    }
+
+
+    public function paket()
+    {
+        $data['title'] = 'paket';
+        $data['user'] = $this->db->get_where('user', ['email' =>
+        $this->session->userdata('email')])->row_array();
+        // echo 'selamat datang ' . $data['user']['name'];
+
+        $data['paket'] = $this->db->get('tbl_produk')->result_array();
+        $data['produk'] = $this->db->get('tbl_kategori')->result_array();
         $this->load->view('templates/header_ad', $data);
         $this->load->view('templates/sidebar_ad', $data);
         $this->load->view('templates/topbar_ad', $data);

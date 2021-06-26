@@ -75,8 +75,8 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('admin/tambah_paket'); ?>" method="post"  enctype="multipart/form-data">
-           
+            <form action="<?php echo site_url('Admin/tambah_paket'); ?>" method="post" enctype="multipart/form-data">
+
                 <div class="modal-body">
 
                     <div class="form-group">
@@ -123,6 +123,7 @@
 
                     <!-- gambar	 -->
                     <div class="form-group">
+                        <!-- <input type="text" class="form-control" id="gambar" name="gambar" placeholder="gambar"> -->
                         <input type="file" class="form-control" id="gambar" name="gambar" placeholder="gambar">
                     </div>
                 </div>
@@ -130,7 +131,7 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Add paket</button>
                 </div>
-               
+
             </form>
         </div>
     </div>
