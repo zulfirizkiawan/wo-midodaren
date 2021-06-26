@@ -45,7 +45,7 @@
     <div class="col-lg-4">
       <div class="kotak">
         <form method="post" action="<?php echo base_url(); ?>pemesanan/tambah" method="post" accept-charset="utf-8">
-          <a href="#"><img class="img-thumbnail" src="<?php echo base_url() . 'assets/images/' . $row['gambar']; ?>" /></a>
+          <a href="#"><img class="img-thumbnail" src="<?php echo base_url() . 'assets/img/paket/' . $row['gambar']; ?>" /></a>
           <div class="card-body">
             <h4 class="card-title">
               <a href="#"><?php echo $row['nama_produk']; ?></a>
