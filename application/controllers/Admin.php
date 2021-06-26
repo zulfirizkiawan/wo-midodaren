@@ -129,23 +129,6 @@ class Admin extends CI_Controller
         $this->load->view('templates/footer_ad');
     }
 
-
-    public function paket()
-    {
-        $data['title'] = 'paket';
-        $data['user'] = $this->db->get_where('user', ['email' =>
-        $this->session->userdata('email')])->row_array();
-        // echo 'selamat datang ' . $data['user']['name'];
-
-        $data['paket'] = $this->db->get('tbl_produk')->result_array();
-        $data['produk'] = $this->db->get('tbl_kategori')->result_array();
-        $this->load->view('templates/header_ad', $data);
-        $this->load->view('templates/sidebar_ad', $data);
-        $this->load->view('templates/topbar_ad', $data);
-        $this->load->view('admin/paket', $data);
-        $this->load->view('templates/footer_ad');
-    }
-
     public function data_paket()
     {
 
