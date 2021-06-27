@@ -62,5 +62,17 @@ class Keranjang_model extends CI_Model {
         // return $this->db->get()->num_rows();
 		return $this->db->get();
     }
+
+	function data_pembayaran()
+    {
+		
+        $this->db->select('*', 'user.name');
+        $this->db->from('pembayaran');
+        $this->db->join('user', 'id=pembayaran.id_user');
+		
+        // return $this->db->get()->num_rows();
+		return $this->db->get();
+    }
+
 }
 ?>

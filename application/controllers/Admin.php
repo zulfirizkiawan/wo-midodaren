@@ -112,6 +112,7 @@ class Admin extends CI_Controller
             }
         }
     }
+
     public function paket()
     {
         $data['title'] = 'paket';
@@ -349,5 +350,18 @@ class Admin extends CI_Controller
         redirect('admin/role');
     }
 
+    public function data_pembayaran()
+    {
+        $data['title'] = 'Data Pembayaran';
+        $data['user'] = $this->db->get_where('user', ['email' =>
+        $this->session->userdata('email')])->row_array();
 
+        $data['mbukti'] = $this->Keranjang_model->data_pembayaran()->result_array();
+
+        $this->load->view('templates/header_ad', $data);
+        $this->load->view('templates/sidebar_ad', $data);
+        $this->load->view('templates/topbar_ad', $data);
+        $this->load->view('admin/data_pembayaran', $data);
+        $this->load->view('templates/footer_ad');
+    }
 }
