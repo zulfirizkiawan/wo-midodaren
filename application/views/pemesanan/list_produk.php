@@ -36,11 +36,23 @@
     ?>
   </div>
 
-  
+	 
 
 </div>
 <br>
 <br>
+<div class="container">
+		<div class="btn-group">
+		  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    Category
+		  </button>
+		  <div class="dropdown-menu">
+		    <a class="dropdown-item" href="">Category 1</a>
+		    <a class="dropdown-item" href="">Category 2</a>
+		    <a class="dropdown-item" href="">Category 3</a>
+		  </div>
+		</div>
+	</div>
 <div class="row">
   <?php
   foreach ($produk as $row) {
