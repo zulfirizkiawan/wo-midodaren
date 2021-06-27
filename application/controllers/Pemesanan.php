@@ -19,13 +19,13 @@ class Pemesanan extends CI_Controller
 		$this->session->userdata('email')])->row_array();
 		// echo 'selamat datang ' . $data['user']['name'];
 
-		$kategori = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+		$kategori = ($this->uri->segment(2)) ? $this->uri->segment(2) : 0;
 		$data['produk'] = $this->Keranjang_model->get_produk_kategori($kategori);
 		$data['kategori'] = $this->Keranjang_model->get_kategori_all();
 
 		// $data['menu'] = $this->db->get('Pemesanan')->result_array();
 
-		// $this->form_validation->set_rules('menu', 'Menu', 'required');
+	
 
 		if ($this->form_validation->run() == false) {
 			$this->load->view('templates/header_ad', $data);
@@ -34,8 +34,6 @@ class Pemesanan extends CI_Controller
 			$this->load->view('pemesanan/list_produk', $data);
 			$this->load->view('templates/footer_ad');
 		} else {
-			$this->db->insert('user_menu', ['menu' => $this->input->post('menu')]);
-			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> New Menu Added! </div>');
 			redirect('pemesanan');
 		}
 	}

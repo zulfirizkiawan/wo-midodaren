@@ -14,6 +14,7 @@
                         <th scope="col">telp</th>
                         <th scope="col">tgl transaksi</th>
                         <th scope="col">harga</th>
+                        <th scope="col">status</th>
                         
                         <th scope="col">Action</th>
                     </tr>
@@ -21,7 +22,7 @@
                 <tbody>
                     <?php $i = 1; ?>
                     <?php foreach ($pesanans as $m) : ?>
-                        <tr>
+                        <tr> 
                             <th scope="row"><?= $i ?></th>
                             
                             <td><?= $m['nama_produk']; ?></td>
@@ -30,6 +31,7 @@
                              <td><?= $m['telp']; ?></td>
                             <td><?= $m['tanggal']; ?></td>
                             <td><?= $m['harga']; ?></td>
+                            <td><?= $m['status']; ?></td>
                             
                             	
                         

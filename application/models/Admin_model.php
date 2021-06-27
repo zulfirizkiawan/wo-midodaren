@@ -27,7 +27,8 @@ class Admin_model extends CI_Model
         tbl_pelanggan.nama,
         tbl_pelanggan.telp,
         tbl_order.tanggal,
-        tbl_detail_order.harga');
+        tbl_detail_order.harga,
+        tbl_detail_order.status');
 		$this->db->from('tbl_detail_order');
 		$this->db->join('tbl_produk', 'tbl_detail_order.produk=tbl_produk.id_produk','left');
 		$this->db->join('tbl_order', 'tbl_detail_order.order_id=tbl_order.id','left');

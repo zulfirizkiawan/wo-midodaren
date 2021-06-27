@@ -7,11 +7,11 @@
 </div>
 
 <div class="col-lg-3">
-  <br>
-  <br>
+
+  <!-- KERANJANG PEMESANAN -->
   <div class="list-group">
 
-    <a href="<?php echo base_url() ?>pemesanan/tampil_cart" class="list-group-item"><strong><i class="glyphicon glyphicon-shopping-cart"></i> KERANJANG BELANJA</strong></a>
+    <a href="<?php echo base_url() ?>pemesanan/tampil_cart" class="list-group-item"><strong><i class="glyphicon glyphicon-shopping-cart"></i> KERANJANG PEMESANAN</strong></a>
     <?php
 
     $cart = $this->cart->contents();
@@ -19,7 +19,7 @@
     // If cart is empty, this will show below message.
     if (empty($cart)) {
     ?>
-      <a class="list-group-item">Keranjang Belanja Kosong</a>
+      <a class="list-group-item">Order Kosong</a>
       <?php
     } else {
       $grand_total = 0;
@@ -35,6 +35,20 @@
     }
     ?>
   </div>
+
+  <!-- KATEGORI -->
+  <div class="list-group">
+    <a class="list-group-item"><strong>KATEGORI</strong></a>
+    <a href="<?php echo base_url() ?>pemesanan/index/" class="list-group-item">Semua</a>
+    <?php
+    foreach ($kategori as $row) {
+    ?>
+      <a href="<?php echo base_url() ?>pemesanan/index/<?php echo $row['id']; ?>" class="list-group-item"><?php echo $row['nama_kategori']; ?></a>
+    <?php
+    }
+    ?>
+  </div><br>
+
 </div>
 <br>
 <br>
@@ -68,6 +82,6 @@
     </div>
   <?php
   }
-  ?> 
+  ?>
 </div>
 </div>
