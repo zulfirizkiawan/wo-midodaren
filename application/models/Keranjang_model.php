@@ -73,4 +73,6 @@ class Keranjang_model extends CI_Model
 		// return $this->db->get()->num_rows();
 		return $this->db->get();
 	}
+
+	
 }

@@ -22,8 +22,7 @@ class Pemesanan extends CI_Controller
 		$kategori = ($this->uri->segment(2)) ? $this->uri->segment(2) : 0;
 		$data['produk'] = $this->Keranjang_model->get_produk_kategori($kategori);
 		$data['kategori'] = $this->Keranjang_model->get_kategori_all();
-
-		// $data['menu'] = $this->db->get('Pemesanan')->result_array();
+		
 
 	
 

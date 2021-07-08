@@ -47,9 +47,9 @@
 		    Category
 		  </button>
 		  <div class="dropdown-menu">
-		    <a class="dropdown-item" href="">Category 1</a>
-		    <a class="dropdown-item" href="">Category 2</a>
-		    <a class="dropdown-item" href="">Category 3</a>
+		    <a class="dropdown-item" href="" >Semua</a>
+		    <a class="dropdown-item" href="" >Rumah</a>
+		    <a class="dropdown-item" href="" >Hotel</a>
 		  </div>
 		</div>
 	</div>

@@ -17,7 +17,7 @@
                          <?= $this->session->flashdata('message'); ?>
                          <br>
                          <div class="panel-body">
-                              <form action="<?php echo site_url('Pemesanan/konfirmasi_pembayaran'); ?>" method="post" enctype="multipart/form-data" role="form">
+                               <form action="<?php echo site_url('Pemesanan/konfirmasi_pembayaran'); ?>" method="post" enctype="multipart/form-data" role="form">
                              
                               <input type="hidden" name="id_user" value="<?= $user['id']; ?>" />
                                    
